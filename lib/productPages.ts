@@ -7,6 +7,9 @@ export type ProductPage = {
   slug: string;
   name: string;
   shortName: string;
+  keyword: string;
+  searchIntent: string;
+  buyingFocus: string;
   title: string;
   metaTitle: string;
   metaDescription: string;
@@ -19,6 +22,7 @@ export type ProductPage = {
   oem: string;
   moq: string;
   certification: string;
+  relatedSlugs: string[];
   faqs: { question: string; answer: string }[];
 };
 
@@ -45,6 +49,84 @@ const baseAdvantages = [
 
 const defaultCertification =
   "Certification support can include CE, RoHS, IP68 waterproof testing and quality inspection documents for overseas purchasing review.";
+
+const pageStrategy: Record<string, { intent: string; focus: string; related: string[] }> = {
+  "swimming-pool-light-manufacturer": {
+    intent: "finding a long-term LED pool light manufacturer",
+    focus: "factory qualification, production stability, OEM service, IP68 testing and export support",
+    related: ["china-led-pool-light-supplier", "oem-pool-light-manufacturer", "ip68-underwater-led-pool-light"]
+  },
+  "ip68-underwater-led-pool-light": {
+    intent: "sourcing waterproof underwater pool lights",
+    focus: "IP68 waterproof structure, low-voltage safety, cable sealing and underwater installation reliability",
+    related: ["12v-led-pool-light", "stainless-steel-pool-light", "underwater-fountain-light"]
+  },
+  "rgb-swimming-pool-light": {
+    intent: "buying color changing pool lights for projects",
+    focus: "RGB/RGBW control, color effects, controller matching and hotel or villa pool applications",
+    related: ["dmx512-pool-light", "custom-pool-lighting-solution", "12v-led-pool-light"]
+  },
+  "12v-led-pool-light": {
+    intent: "sourcing low-voltage LED pool lights",
+    focus: "12V AC/DC options, safer pool installation, replacement demand and distributor stock planning",
+    related: ["24v-swimming-pool-light", "ip68-underwater-led-pool-light", "rgb-swimming-pool-light"]
+  },
+  "24v-swimming-pool-light": {
+    intent: "sourcing 24V pool lights for commercial projects",
+    focus: "24V project specification, stable performance, hotel pools, water parks and engineering supply",
+    related: ["12v-led-pool-light", "dmx512-pool-light", "china-led-pool-light-supplier"]
+  },
+  "stainless-steel-pool-light": {
+    intent: "finding durable stainless steel pool lights",
+    focus: "stainless steel housing, corrosion resistance, waterproof sealing and long-term underwater use",
+    related: ["ip68-underwater-led-pool-light", "underwater-fountain-light", "fountain-led-light"]
+  },
+  "dmx512-pool-light": {
+    intent: "buying programmable RGB pool lighting",
+    focus: "DMX512 control, RGB/RGBW effects, synchronized project lighting and commercial pool applications",
+    related: ["rgb-swimming-pool-light", "fountain-led-light", "custom-pool-lighting-solution"]
+  },
+  "fountain-led-light": {
+    intent: "sourcing fountain lights from a manufacturer",
+    focus: "IP68 underwater fountain use, RGB/DMX options, stainless steel body and engineering cooperation",
+    related: ["underwater-fountain-light", "waterfall-led-light", "dmx512-pool-light"]
+  },
+  "waterfall-led-light": {
+    intent: "finding LED lighting for pool waterfalls",
+    focus: "waterfall, spillway and water curtain applications with waterproof LED lighting effects",
+    related: ["fountain-led-light", "underwater-fountain-light", "pond-led-underwater-light"]
+  },
+  "spa-pool-light": {
+    intent: "buying compact lights for SPA pools",
+    focus: "compact size, low-voltage lighting, IP68 sealing and replacement demand for SPA and small pools",
+    related: ["12v-led-pool-light", "ip68-underwater-led-pool-light", "custom-pool-lighting-solution"]
+  },
+  "underwater-fountain-light": {
+    intent: "sourcing underwater lights for fountains",
+    focus: "submerged installation, RGB control, waterproof cable sealing and landscape project demand",
+    related: ["fountain-led-light", "dmx512-pool-light", "pond-led-underwater-light"]
+  },
+  "pond-led-underwater-light": {
+    intent: "buying underwater lights for ponds and landscapes",
+    focus: "garden pond lighting, landscape water features, IP68 sealing and outdoor project use",
+    related: ["underwater-fountain-light", "waterfall-led-light", "fountain-led-light"]
+  },
+  "oem-pool-light-manufacturer": {
+    intent: "finding an OEM pool light factory",
+    focus: "private label, custom packaging, voltage customization, logo service and repeat wholesale supply",
+    related: ["custom-pool-lighting-solution", "swimming-pool-light-manufacturer", "china-led-pool-light-supplier"]
+  },
+  "china-led-pool-light-supplier": {
+    intent: "finding a China LED pool light supplier",
+    focus: "factory direct supply, export packing, distributor support, bulk order planning and global shipping",
+    related: ["swimming-pool-light-manufacturer", "oem-pool-light-manufacturer", "12v-led-pool-light"]
+  },
+  "custom-pool-lighting-solution": {
+    intent: "requesting a custom pool lighting solution",
+    focus: "project specification, OEM/ODM customization, RGB/RGBW control, voltage and cable requirements",
+    related: ["oem-pool-light-manufacturer", "rgb-swimming-pool-light", "dmx512-pool-light"]
+  }
+};
 
 const productSeed = [
   {
@@ -214,10 +296,22 @@ function galleryFor(keyword: string) {
   ];
 }
 
+function advantagesFor(name: string, keyword: string) {
+  return [
+    `Factory direct support for ${keyword} bulk orders`,
+    `IP68 waterproof design for ${name} project use`,
+    "OEM/ODM service for logo, packaging, voltage and cable requirements",
+    "B2B quotation support for distributors, contractors and importers"
+  ];
+}
+
 export const productPages: ProductPage[] = productSeed.map((product) => ({
   slug: product.slug,
   name: product.name,
   shortName: product.name,
+  keyword: product.keyword,
+  searchIntent: pageStrategy[product.slug].intent,
+  buyingFocus: pageStrategy[product.slug].focus,
   title: product.title,
   metaTitle: product.title,
   metaDescription: product.description,
@@ -225,18 +319,24 @@ export const productPages: ProductPage[] = productSeed.map((product) => ({
   image: mainImage,
   gallery: galleryFor(product.keyword),
   specs: specsWith(product.specOverrides),
-  advantages: baseAdvantages,
+  advantages: advantagesFor(product.name, product.keyword),
   applications: product.applications,
   oem:
     "OEM and ODM support is available for logo, cable length, voltage, color control, product labeling, export packaging and distributor product lines.",
   moq:
     "MOQ depends on model and customization level. Trial orders and project quantity quotations can be discussed with qualified B2B buyers.",
   certification: defaultCertification,
+  relatedSlugs: pageStrategy[product.slug].related,
   faqs: [
     {
       question: `Can Lanhe supply ${product.name} for overseas B2B buyers?`,
       answer:
-        "Yes. We support distributors, importers, pool contractors, engineering companies and project buyers with factory direct supply."
+        `Yes. We support distributors, importers, pool contractors, engineering companies and project buyers looking for ${product.keyword} with factory direct supply.`
+    },
+    {
+      question: `What should buyers confirm before requesting ${product.name} pricing?`,
+      answer:
+        `Please confirm quantity, voltage, installation method, color option, application and target market so we can recommend the right ${product.name} specification.`
     },
     {
       question: "Can you provide OEM or private label service?",

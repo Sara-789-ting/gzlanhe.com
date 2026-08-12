@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, BadgeCheck, Factory, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -10,6 +11,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
 import { ProductJsonLd } from "@/components/ProductJsonLd";
 import { getProductBySlug, productPages } from "@/lib/productPages";
+import type { ProductPage } from "@/lib/productPages";
 import { siteConfig } from "@/lib/site";
 
 type ProductRouteProps = {
@@ -35,6 +37,7 @@ export async function generateMetadata({ params }: ProductRouteProps): Promise<M
     },
     keywords: [
       product.name,
+      product.keyword,
       "LED pool light manufacturer",
       "IP68 underwater light supplier",
       "China LED lighting manufacturer",
@@ -55,6 +58,9 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
   if (!product) {
     notFound();
   }
+  const relatedProducts = product.relatedSlugs
+    .map((relatedSlug) => getProductBySlug(relatedSlug))
+    .filter((item): item is ProductPage => Boolean(item));
 
   return (
     <>
@@ -74,7 +80,7 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
           <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div className="text-white">
               <p className="text-sm font-bold uppercase tracking-wide text-cyan-100">
-                {product.shortName}
+                Core keyword: {product.keyword}
               </p>
               <h1 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
                 {product.title}
@@ -131,9 +137,13 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
                 Product Introduction
               </p>
               <h2 className="mt-3 text-3xl font-bold text-ink">
-                Built for B2B supply and project requirements
+                {product.name} for {product.searchIntent}
               </h2>
               <p className="mt-5 leading-8 text-slate-600">{product.description}</p>
+              <div className="mt-6 rounded border border-cyan-100 bg-mist p-5">
+                <h3 className="text-lg font-bold text-ink">B2B Purchasing Focus</h3>
+                <p className="mt-3 leading-7 text-slate-700">{product.buyingFocus}.</p>
+              </div>
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 <div className="rounded border border-slate-200 bg-white p-5">
                   <Factory className="mb-3 text-ocean" aria-hidden="true" />
@@ -180,11 +190,11 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
           <div className="section-shell grid gap-10 lg:grid-cols-2">
             <div>
               <p className="text-sm font-bold uppercase tracking-wide text-ocean">Advantages</p>
-              <h2 className="mt-3 text-3xl font-bold text-ink">Product Advantages</h2>
+              <h2 className="mt-3 text-3xl font-bold text-ink">Why Choose Lanhe for {product.name}</h2>
               <div className="mt-6 grid gap-4">
                 {product.advantages.map((item) => (
                   <div key={item} className="rounded border border-slate-200 p-5">
-                    <p className="font-bold text-ink">{item}</p>
+                    <h3 className="font-bold text-ink">{item}</h3>
                   </div>
                 ))}
               </div>
@@ -195,7 +205,7 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {product.applications.map((item) => (
                   <div key={item} className="rounded bg-ink p-5 text-white">
-                    <p className="font-bold">{item}</p>
+                    <h3 className="font-bold">{item}</h3>
                     <p className="mt-3 text-sm leading-6 text-slate-300">
                       Suitable for distributors, contractors and project buyers.
                     </p>
@@ -243,6 +253,31 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
               Get Quote
               <ArrowRight size={18} aria-hidden="true" />
             </a>
+          </div>
+        </section>
+
+        <section className="bg-white py-20">
+          <div className="section-shell">
+            <div className="mb-8">
+              <p className="text-sm font-bold uppercase tracking-wide text-ocean">Internal Links</p>
+              <h2 className="mt-3 text-3xl font-bold text-ink">Related Pool Lighting Products</h2>
+              <p className="mt-4 max-w-3xl leading-8 text-slate-600">
+                Buyers comparing {product.keyword} can also review related LED pool
+                light, underwater lighting and OEM solution pages before sending an RFQ.
+              </p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {relatedProducts.map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/products/${related.slug}`}
+                  className="focus-ring rounded border border-slate-200 bg-slate-50 p-5 transition hover:border-ocean hover:bg-white"
+                >
+                  <h3 className="text-lg font-bold text-ink">{related.name}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{related.metaDescription}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       </main>
