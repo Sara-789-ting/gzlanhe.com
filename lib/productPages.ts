@@ -219,7 +219,7 @@ export const productPages: ProductPage[] = productSeed.map((product) => ({
   name: product.name,
   shortName: product.name,
   title: product.title,
-  metaTitle: `${product.title} | Lanhe Pool Lighting`,
+  metaTitle: product.title,
   metaDescription: product.description,
   description: product.description,
   image: mainImage,

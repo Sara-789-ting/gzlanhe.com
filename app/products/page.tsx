@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "LED Pool Light Products",
   description:
     "Explore LED swimming pool lights, underwater pool lights, RGB pool lights, fountain lights and SPA pool lights from a China LED pool light manufacturer.",
+  alternates: {
+    canonical: "https://gzlanhe.com/products"
+  },
   keywords: [
     "LED pool light products",
     "LED swimming pool light",

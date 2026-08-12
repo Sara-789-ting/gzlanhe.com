@@ -30,6 +30,9 @@ export async function generateMetadata({ params }: ProductRouteProps): Promise<M
   return {
     title: product.metaTitle,
     description: product.metaDescription,
+    alternates: {
+      canonical: `${siteConfig.url}/products/${product.slug}`
+    },
     keywords: [
       product.name,
       "LED pool light manufacturer",
@@ -40,6 +43,7 @@ export async function generateMetadata({ params }: ProductRouteProps): Promise<M
     openGraph: {
       title: product.metaTitle,
       description: product.metaDescription,
+      url: `${siteConfig.url}/products/${product.slug}`,
       images: [{ url: product.image, width: 1536, height: 1024 }]
     }
   };

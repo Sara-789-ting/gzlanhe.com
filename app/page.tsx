@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Award, BadgeCheck, Factory, Globe2, PackageCheck, ShieldCheck, Star, Truck } from "lucide-react";
@@ -8,6 +9,12 @@ import { InquiryForm } from "@/components/InquiryForm";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { advantages, applications, productCategories } from "@/lib/products";
 import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://gzlanhe.com/"
+  }
+};
 
 const factoryStrength = [
   {
