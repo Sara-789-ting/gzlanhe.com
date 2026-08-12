@@ -1,15 +1,9 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { productPages } from "@/lib/productPages";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const allowedProducts = new Set([
-  "Swimming Pool LED Light",
-  "Underwater LED Light",
-  "Fountain LED Light",
-  "SPA Pool Light",
-  "Custom Lighting Solution",
-  "RGB Swimming Pool Light"
-]);
+const allowedProducts = new Set(productPages.map((product) => product.name));
 
 type ContactPayload = {
   name?: string;

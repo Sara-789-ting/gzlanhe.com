@@ -5,8 +5,12 @@ import { ArrowRight, BadgeCheck, Factory, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ContactActions } from "@/components/ContactActions";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
 import { ProductJsonLd } from "@/components/ProductJsonLd";
 import { getProductBySlug, productPages } from "@/lib/productPages";
+import { siteConfig } from "@/lib/site";
 
 type ProductRouteProps = {
   params: Promise<{ slug: string }>;
@@ -51,6 +55,15 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
   return (
     <>
       <ProductJsonLd product={product} />
+      <FaqJsonLd faqs={product.faqs} />
+      <OrganizationJsonLd pageUrl={`${siteConfig.url}/products/${product.slug}`} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Products", path: "/products" },
+          { name: product.name, path: `/products/${product.slug}` }
+        ]}
+      />
       <Header />
       <main>
         <section className="bg-[linear-gradient(120deg,#073847_0%,#075f73_50%,#f7fbfc_50%,#f7fbfc_100%)] py-16">
@@ -70,7 +83,7 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
             <div className="overflow-hidden rounded border border-white/30 bg-white shadow-2xl">
               <Image
                 src={product.image}
-                alt={`${product.name} product image`}
+                alt={`IP68 waterproof RGB swimming pool LED light manufacturer - ${product.name}`}
                 width={1536}
                 height={1024}
                 className="aspect-[4/3] w-full object-cover"
@@ -140,7 +153,7 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
               </div>
             </div>
             <div className="rounded border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="text-2xl font-bold text-ink">Technical Parameters</h2>
+              <h2 className="text-2xl font-bold text-ink">Technical Specifications</h2>
               <div className="mt-6 overflow-hidden rounded border border-slate-200">
                 <table className="w-full border-collapse text-left text-sm">
                   <tbody>
@@ -200,10 +213,9 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
               <p className="mt-4 leading-8 text-slate-600">{product.moq}</p>
             </div>
             <div className="rounded border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="text-2xl font-bold text-ink">Certification Support</h2>
+              <h2 className="text-2xl font-bold text-ink">Certification</h2>
               <p className="mt-4 leading-8 text-slate-600">
-                Certification and quality documents can be prepared for CE, RoHS,
-                IP68 waterproof testing and buyer inspection requirements.
+                {product.certification}
               </p>
             </div>
           </div>

@@ -1,15 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { productPages } from "@/lib/productPages";
 
-const products = [
-  "Swimming Pool LED Light",
-  "Underwater LED Light",
-  "Fountain LED Light",
-  "SPA Pool Light",
-  "Custom Lighting Solution",
-  "RGB Swimming Pool Light"
-];
+const products = productPages.map((product) => product.name);
 
 const successMessage = "Thank you for your inquiry. We will reply within 24 hours.";
 
