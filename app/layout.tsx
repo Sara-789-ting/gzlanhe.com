@@ -4,27 +4,43 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://gzlanhe.com"),
   title: {
-    default: "LED Pool Light Manufacturer | IP68 Underwater Light Factory China",
-    template: "%s | GZ Lanhe"
+    default: "Swimming Pool Light Manufacturer | IP68 Underwater LED Light Supplier China",
+    template: "%s | Lanhe Pool Lighting"
   },
   description:
-    "Professional LED pool light manufacturer in China. Supply IP68 waterproof swimming pool lights, underwater lights and OEM custom lighting solutions worldwide.",
+    "Lanhe Pool Lighting is a China LED pool light manufacturer supplying IP68 underwater LED lights, RGB swimming pool lights, fountain lights and OEM custom lighting solutions worldwide.",
   keywords: [
-    "LED pool light",
-    "Swimming pool light manufacturer",
-    "Underwater LED light supplier",
-    "IP68 pool light factory",
-    "China LED lighting manufacturer"
+    "swimming pool light manufacturer",
+    "IP68 underwater LED light",
+    "LED pool light supplier China",
+    "RGB swimming pool light",
+    "fountain light manufacturer",
+    "SPA pool light",
+    "custom lighting solution"
   ],
+  alternates: {
+    canonical: "https://gzlanhe.com"
+  },
   openGraph: {
-    title: "LED Pool Light Manufacturer | IP68 Underwater Light Factory China",
+    title: "Lanhe Pool Lighting | LED Pool Light Supplier China",
     description:
-      "Professional LED pool light manufacturer in China supplying IP68 pool lights, underwater lights and OEM custom lighting solutions worldwide.",
+      "Factory direct IP68 waterproof LED swimming pool lights, underwater LED lights, fountain lights and OEM lighting solutions for global B2B buyers.",
     url: "https://gzlanhe.com",
-    siteName: "GZ Lanhe",
+    siteName: "Lanhe Pool Lighting",
     images: [{ url: "/images/hero-pool-lights.png", width: 1536, height: 1024 }],
     locale: "en_US",
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lanhe Pool Lighting | IP68 LED Pool Light Manufacturer",
+    description:
+      "China LED pool light manufacturer for distributors, contractors, importers and engineering buyers.",
+    images: ["/images/hero-pool-lights.png"]
+  },
+  robots: {
+    index: true,
+    follow: true
   }
 };
 

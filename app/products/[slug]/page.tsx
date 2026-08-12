@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, BadgeCheck, Factory, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { ContactActions } from "@/components/ContactActions";
 import { ProductJsonLd } from "@/components/ProductJsonLd";
 import { getProductBySlug, productPages } from "@/lib/productPages";
 
@@ -71,6 +72,7 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
                 Get Factory Price
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
+              <ContactActions product={product.name} />
             </div>
             <div className="overflow-hidden rounded border border-white/30 bg-white shadow-2xl">
               <Image
@@ -203,6 +205,13 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
             <div className="rounded border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="text-2xl font-bold text-ink">MOQ Information</h2>
               <p className="mt-4 leading-8 text-slate-600">{product.moq}</p>
+            </div>
+            <div className="rounded border border-slate-200 bg-white p-6 shadow-sm">
+              <h2 className="text-2xl font-bold text-ink">Certification Support</h2>
+              <p className="mt-4 leading-8 text-slate-600">
+                Certification and quality documents can be prepared for CE, RoHS,
+                IP68 waterproof testing and buyer inspection requirements.
+              </p>
             </div>
           </div>
         </section>

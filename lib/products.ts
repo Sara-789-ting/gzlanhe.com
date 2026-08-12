@@ -1,23 +1,18 @@
 export const productCategories = [
   {
-    name: "LED Swimming Pool Light",
-    href: "/products/led-swimming-pool-light",
-    description: "Slim and standard LED swimming pool lights for residential and commercial pools."
+    name: "Swimming Pool LED Light",
+    href: "/products/swimming-pool-led-light",
+    description: "IP68 LED swimming pool lights for pool builders, distributors and commercial projects."
   },
   {
-    name: "Underwater Pool Light",
-    href: "/products/underwater-pool-light",
-    description: "IP68 waterproof underwater lighting for swimming pools and projects."
+    name: "Underwater LED Light",
+    href: "/products/underwater-led-light",
+    description: "Waterproof underwater LED lights for pools, fountains and landscape water features."
   },
   {
-    name: "RGB Pool Light",
-    href: "/products/rgb-pool-light",
-    description: "Color changing RGB and RGBW pool lights with different voltage options."
-  },
-  {
-    name: "Fountain Light",
-    href: "/products/fountain-light",
-    description: "RGB and DMX-ready fountain lighting for water landscape projects."
+    name: "Fountain LED Light",
+    href: "/products/fountain-led-light",
+    description: "RGB and DMX-ready fountain LED lights for water feature and engineering projects."
   },
   {
     name: "SPA Pool Light",
@@ -25,9 +20,9 @@ export const productCategories = [
     description: "Compact underwater lights for SPA, small pools and water features."
   },
   {
-    name: "OEM Custom Lighting",
-    href: "/contact",
-    description: "OEM and ODM support for distributors, importers and engineering buyers."
+    name: "Custom Lighting Solution",
+    href: "/products/custom-lighting-solution",
+    description: "OEM and ODM pool lighting solutions for private label and project buyers."
   }
 ];
 

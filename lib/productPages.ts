@@ -23,19 +23,19 @@ export type ProductPage = {
 
 export const productPages: ProductPage[] = [
   {
-    slug: "led-swimming-pool-light",
-    name: "LED Swimming Pool Light",
+    slug: "swimming-pool-led-light",
+    name: "Swimming Pool LED Light",
     shortName: "LED Pool Light",
     title: "IP68 Waterproof LED Swimming Pool Light Manufacturer",
-    metaTitle: "LED Swimming Pool Light Manufacturer | IP68 Pool Light Factory",
+    metaTitle: "Swimming Pool LED Light Manufacturer | IP68 Pool Light Factory",
     metaDescription:
-      "China LED swimming pool light manufacturer supplying IP68 waterproof pool lights, RGB pool lamps and OEM custom lighting for distributors and contractors.",
+      "China swimming pool LED light manufacturer supplying IP68 waterproof pool lights, RGB swimming pool lights and OEM custom lighting for distributors and contractors.",
     description:
       "Lanhe manufactures LED swimming pool lights for residential pools, hotel pools, villa pools and commercial pool projects. The product range supports white, RGB and RGBW options for buyers who need stable factory supply.",
     image: "/images/hero-pool-lights.png",
     gallery: [
-      { src: "/images/hero-pool-lights.png", alt: "LED swimming pool light manufacturer product main image", label: "Main Image" },
-      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "IP68 LED swimming pool light detail image", label: "Detail Image" },
+      { src: "/images/hero-pool-lights.png", alt: "swimming pool LED light manufacturer product main image", label: "Main Image" },
+      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "IP68 swimming pool LED light detail image", label: "Detail Image" },
       { src: "/images/hero-pool-lights.png", alt: "LED pool light installation effect in swimming pool", label: "Installation Effect" },
       { src: "/images/products/led-swimming-pool-light-detail.png", alt: "LED swimming pool light application for hotel pool", label: "Application Scene" }
     ],
@@ -70,20 +70,20 @@ export const productPages: ProductPage[] = [
     ]
   },
   {
-    slug: "underwater-pool-light",
-    name: "Underwater Pool Light",
-    shortName: "Underwater Pool Light",
-    title: "IP68 Underwater Pool Light Supplier for Pool Projects",
-    metaTitle: "Underwater Pool Light Supplier | IP68 LED Pool Light China",
+    slug: "underwater-led-light",
+    name: "Underwater LED Light",
+    shortName: "Underwater LED Light",
+    title: "IP68 Underwater LED Light Supplier for Pool Projects",
+    metaTitle: "Underwater LED Light Supplier | IP68 Pool Light China",
     metaDescription:
-      "IP68 underwater pool light supplier in China for swimming pool contractors, pool builders, importers and project lighting buyers.",
+      "IP68 underwater LED light supplier in China for swimming pool contractors, pool builders, importers and project lighting buyers.",
     description:
-      "Our underwater pool lights are built for pool walls, commercial projects and replacement lighting demand. The range focuses on waterproof reliability, clear light output and project-friendly specifications.",
+      "Our underwater LED lights are built for pool walls, commercial projects, fountains and replacement lighting demand. The range focuses on waterproof reliability, clear light output and project-friendly specifications.",
     image: "/images/hero-pool-lights.png",
     gallery: [
-      { src: "/images/hero-pool-lights.png", alt: "IP68 underwater pool light supplier main product image", label: "Main Image" },
-      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "underwater pool light waterproof cable detail", label: "Detail Image" },
-      { src: "/images/hero-pool-lights.png", alt: "underwater pool light installation effect", label: "Installation Effect" },
+      { src: "/images/hero-pool-lights.png", alt: "IP68 underwater LED light supplier main product image", label: "Main Image" },
+      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "underwater LED light waterproof cable detail", label: "Detail Image" },
+      { src: "/images/hero-pool-lights.png", alt: "underwater LED light installation effect", label: "Installation Effect" },
       { src: "/images/products/led-swimming-pool-light-detail.png", alt: "underwater LED pool light application scene", label: "Application Scene" }
     ],
     specs: [
@@ -117,71 +117,24 @@ export const productPages: ProductPage[] = [
     ]
   },
   {
-    slug: "rgb-pool-light",
-    name: "RGB Pool Light",
-    shortName: "RGB Pool Light",
-    title: "RGB LED Pool Light Manufacturer for Color Changing Projects",
-    metaTitle: "RGB Pool Light Manufacturer | Color Changing LED Pool Light",
+    slug: "fountain-led-light",
+    name: "Fountain LED Light",
+    shortName: "Fountain LED Light",
+    title: "IP68 Fountain LED Light Manufacturer for Water Feature Projects",
+    metaTitle: "Fountain LED Light Manufacturer | RGB DMX Underwater Light",
     metaDescription:
-      "RGB LED pool light manufacturer supplying color changing swimming pool lights, remote control options and OEM custom lighting solutions.",
+      "Fountain LED light manufacturer supplying IP68 underwater RGB and DMX fountain lights for water feature, landscape and engineering projects.",
     description:
-      "RGB pool lights are designed for buyers who need color-changing lighting for villa pools, hotel pools, SPA pools and pool renovation projects. Options can be matched with controller requirements.",
+      "Fountain LED lights are designed for water feature contractors, landscape lighting companies and engineering buyers who need reliable underwater RGB or DMX lighting solutions.",
     image: "/images/hero-pool-lights.png",
     gallery: [
-      { src: "/images/hero-pool-lights.png", alt: "RGB pool light manufacturer main product image", label: "Main Image" },
-      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "RGB pool light lens and LED detail", label: "Detail Image" },
-      { src: "/images/hero-pool-lights.png", alt: "color changing pool light installation effect", label: "Installation Effect" },
-      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "RGB LED pool lamp application scene", label: "Application Scene" }
+      { src: "/images/hero-pool-lights.png", alt: "fountain LED light manufacturer main product image", label: "Main Image" },
+      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "RGB DMX fountain LED light detail", label: "Detail Image" },
+      { src: "/images/hero-pool-lights.png", alt: "fountain LED light installation effect", label: "Installation Effect" },
+      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "underwater fountain LED light application scene", label: "Application Scene" }
     ],
     specs: [
       { label: "Material", value: "Stainless steel / PC / ABS by model" },
-      { label: "Power", value: "12W / 18W / 24W / high power options" },
-      { label: "Voltage", value: "12V AC/DC" },
-      { label: "LED Type", value: "RGB SMD LED / RGBW LED" },
-      { label: "IP Rating", value: "IP68 waterproof" },
-      { label: "Color", value: "RGB / RGBW / remote control" },
-      { label: "Beam Angle", value: "Wide beam for pool illumination" },
-      { label: "Installation", value: "Wall mounted / recessed / surface mounted" }
-    ],
-    advantages: [
-      "Color changing lighting for pool upgrade projects",
-      "Remote control and controller matching options",
-      "OEM support for distributor product lines",
-      "Factory supply for repeat wholesale demand"
-    ],
-    applications: ["Villa Pool", "Hotel Pool", "SPA", "Water Park"],
-    oem: "OEM requests can include color mode, controller matching, packaging, branding and market-specific voltage needs.",
-    moq: "MOQ is flexible for qualified B2B buyers and depends on model, controller and packaging requirements.",
-    faqs: [
-      {
-        question: "Can RGB pool lights work with remote control?",
-        answer: "Yes. Remote control and controller options can be selected based on project requirements."
-      },
-      {
-        question: "Can you customize color modes?",
-        answer: "Customization can be reviewed depending on quantity, controller type and technical requirements."
-      }
-    ]
-  },
-  {
-    slug: "fountain-light",
-    name: "Fountain Light",
-    shortName: "Fountain Light",
-    title: "IP68 LED Fountain Light Manufacturer for Water Features",
-    metaTitle: "LED Fountain Light Manufacturer | Underwater RGB Fountain Light",
-    metaDescription:
-      "China LED fountain light manufacturer supplying IP68 underwater fountain lights, RGB lighting and OEM support for water feature projects.",
-    description:
-      "Lanhe fountain lighting supports water feature contractors, landscape companies and engineering buyers that need underwater RGB lighting for fountains, water curtains and landscape projects.",
-    image: "/images/hero-pool-lights.png",
-    gallery: [
-      { src: "/images/hero-pool-lights.png", alt: "LED fountain light manufacturer main product image", label: "Main Image" },
-      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "underwater fountain light stainless steel detail", label: "Detail Image" },
-      { src: "/images/hero-pool-lights.png", alt: "fountain light installation effect", label: "Installation Effect" },
-      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "RGB fountain light water feature application", label: "Application Scene" }
-    ],
-    specs: [
-      { label: "Material", value: "Stainless steel housing" },
       { label: "Power", value: "9W / 12W / 18W / 24W / custom" },
       { label: "Voltage", value: "12V / 24V options" },
       { label: "LED Type", value: "High brightness LED / RGB LED" },
@@ -207,6 +160,53 @@ export const productPages: ProductPage[] = [
       {
         question: "Can fountain lights be used underwater?",
         answer: "Yes. The product direction focuses on IP68 underwater fountain and water feature lighting."
+      }
+    ]
+  },
+  {
+    slug: "custom-lighting-solution",
+    name: "Custom Lighting Solution",
+    shortName: "Custom Lighting",
+    title: "Custom LED Pool Lighting Solution for OEM and Project Buyers",
+    metaTitle: "Custom Pool Lighting Solution | OEM LED Pool Light Manufacturer",
+    metaDescription:
+      "OEM custom LED pool lighting solution from China for private label distributors, pool contractors, importers and engineering project buyers.",
+    description:
+      "Lanhe Pool Lighting supports OEM and ODM requirements for swimming pool LED lights, IP68 underwater LED lights, RGB pool lights, fountain lights and project-specific lighting solutions.",
+    image: "/images/hero-pool-lights.png",
+    gallery: [
+      { src: "/images/hero-pool-lights.png", alt: "custom LED pool lighting solution main image", label: "Main Image" },
+      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "OEM underwater LED light product detail", label: "Detail Image" },
+      { src: "/images/hero-pool-lights.png", alt: "custom swimming pool light installation effect", label: "Installation Effect" },
+      { src: "/images/products/led-swimming-pool-light-detail.png", alt: "OEM pool lighting application scene", label: "Application Scene" }
+    ],
+    specs: [
+      { label: "Material", value: "Stainless steel / PC / ABS / custom options" },
+      { label: "Power", value: "Customized by product model and project demand" },
+      { label: "Voltage", value: "12V / 24V / market-specific options" },
+      { label: "LED Type", value: "SMD LED / RGB LED / RGBW LED options" },
+      { label: "IP Rating", value: "IP68 waterproof" },
+      { label: "Color", value: "White / warm white / RGB / RGBW / custom" },
+      { label: "Beam Angle", value: "Customized by application" },
+      { label: "Installation", value: "Surface / recessed / wall mounted / submersible" }
+    ],
+    advantages: [
+      "OEM logo, label and export packaging support",
+      "Custom specification review for market requirements",
+      "Private label support for distributors and importers",
+      "Factory direct communication for project buyers"
+    ],
+    applications: ["Distributor Product Line", "Hotel Pool Project", "Villa Pool", "Water Feature Project"],
+    oem: "OEM and ODM support can include logo, packaging, model selection, voltage, cable length, color control, beam angle and product documentation.",
+    moq: "MOQ depends on customization level. Trial orders and project quantity quotations can be discussed with qualified B2B buyers.",
+    faqs: [
+      {
+        question: "Can you support private label pool lights?",
+        answer: "Yes. We can review logo, packaging and product specification requirements for distributor programs."
+      },
+      {
+        question: "Can you customize RGB pool light solutions?",
+        answer: "Yes. RGB, RGBW and controller matching requirements can be discussed based on quantity and application."
       }
     ]
   },

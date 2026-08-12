@@ -3,12 +3,12 @@
 import { useState } from "react";
 
 const products = [
-  "LED Swimming Pool Light",
-  "Underwater Pool Light",
-  "RGB Pool Light",
-  "Fountain Light",
+  "Swimming Pool LED Light",
+  "Underwater LED Light",
+  "Fountain LED Light",
   "SPA Pool Light",
-  "OEM Custom Lighting"
+  "Custom Lighting Solution",
+  "RGB Swimming Pool Light"
 ];
 
 const successMessage = "Thank you for your inquiry. We will reply within 24 hours.";

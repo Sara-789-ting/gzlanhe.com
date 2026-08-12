@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Mail, MessageSquare, PackageCheck } from "lucide-react";
+import { ContactActions } from "@/components/ContactActions";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { InquiryForm } from "@/components/InquiryForm";
@@ -57,6 +58,7 @@ export default function ContactPage() {
               <a className="mt-8 inline-flex font-bold text-signal" href={`mailto:${siteConfig.email}`}>
                 {siteConfig.email}
               </a>
+              <ContactActions product="LED Pool Light" />
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {contactHighlights.map(({ title, text, Icon }) => (
@@ -70,7 +72,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="py-20">
+        <section id="inquiry" className="py-20">
           <div className="section-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
               <p className="text-sm font-bold uppercase tracking-wide text-ocean">

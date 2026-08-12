@@ -3,12 +3,12 @@ import { Resend } from "resend";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const allowedProducts = new Set([
-  "LED Swimming Pool Light",
-  "Underwater Pool Light",
-  "RGB Pool Light",
-  "Fountain Light",
+  "Swimming Pool LED Light",
+  "Underwater LED Light",
+  "Fountain LED Light",
   "SPA Pool Light",
-  "OEM Custom Lighting"
+  "Custom Lighting Solution",
+  "RGB Swimming Pool Light"
 ]);
 
 type ContactPayload = {
