@@ -18,26 +18,24 @@ export function ContactActions({ product = "LED Pool Light", compact = false }: 
     <div className={`flex flex-wrap gap-3 ${compact ? "" : "mt-6"}`}>
       <a className={`${buttonClass} bg-ocean text-white hover:bg-cyan-800`} href="/contact#inquiry">
         <Send size={17} aria-hidden="true" />
-        RFQ
+        Get Quote
       </a>
       <a
         className={`${buttonClass} border border-slate-300 bg-white text-ink hover:border-ocean hover:text-ocean`}
         href={`mailto:${siteConfig.email}?subject=${rfqSubject}&body=${rfqBody}`}
       >
         <Mail size={17} aria-hidden="true" />
-        Email
+        Contact Manufacturer
       </a>
-      {siteConfig.whatsappUrl ? (
-        <a
-          className={`${buttonClass} border border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100`}
-          href={siteConfig.whatsappUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <MessageCircle size={17} aria-hidden="true" />
-          WhatsApp
-        </a>
-      ) : null}
+      <a
+        className={`${buttonClass} border border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100`}
+        href={siteConfig.whatsappUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <MessageCircle size={17} aria-hidden="true" />
+        Chat on WhatsApp
+      </a>
     </div>
   );
 }

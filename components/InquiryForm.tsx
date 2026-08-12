@@ -17,7 +17,7 @@ type InquiryFormProps = {
   buttonLabel?: string;
 };
 
-export function InquiryForm({ buttonLabel = "Get Factory Price" }: InquiryFormProps) {
+export function InquiryForm({ buttonLabel = "Get Quote" }: InquiryFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
 
@@ -45,7 +45,7 @@ export function InquiryForm({ buttonLabel = "Get Factory Price" }: InquiryFormPr
 
     if (!response.ok) {
       setStatus("error");
-      setMessage(result.error || "Submission failed. Please email sara@gzlanhe.com directly.");
+      setMessage(result.error || "Submission failed. Please email sales@gzlanhe.com directly.");
       return;
     }
 
@@ -73,19 +73,25 @@ export function InquiryForm({ buttonLabel = "Get Factory Price" }: InquiryFormPr
           <input required name="email" type="email" className="focus-ring rounded border border-slate-300 px-4 py-3" />
         </label>
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
+          WhatsApp
+          <input name="whatsapp" className="focus-ring rounded border border-slate-300 px-4 py-3" placeholder="+1 555 000 0000" />
+        </label>
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="grid gap-2 text-sm font-semibold text-slate-700">
           Country
           <input required name="country" className="focus-ring rounded border border-slate-300 px-4 py-3" />
         </label>
+        <label className="grid gap-2 text-sm font-semibold text-slate-700">
+          Product Interested
+          <select required name="productInterested" className="focus-ring rounded border border-slate-300 px-4 py-3">
+            <option value="">Select a product</option>
+            {products.map((product) => (
+              <option key={product}>{product}</option>
+            ))}
+          </select>
+        </label>
       </div>
-      <label className="grid gap-2 text-sm font-semibold text-slate-700">
-        Product Interested
-        <select required name="productInterested" className="focus-ring rounded border border-slate-300 px-4 py-3">
-          <option value="">Select a product</option>
-          {products.map((product) => (
-            <option key={product}>{product}</option>
-          ))}
-        </select>
-      </label>
       <label className="grid gap-2 text-sm font-semibold text-slate-700">
         Message
         <textarea

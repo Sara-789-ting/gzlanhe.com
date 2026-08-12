@@ -28,7 +28,7 @@ const contactHighlights = [
 export const metadata: Metadata = {
   title: "Contact LED Pool Light Manufacturer",
   description:
-    "Contact GZ Lanhe for LED pool light factory price, OEM service and custom underwater lighting solutions.",
+    "Contact Lanhe Pool Lighting for LED pool light factory price, WhatsApp inquiry, OEM service and custom underwater lighting solutions.",
   keywords: [
     "contact LED pool light manufacturer",
     "LED pool light factory price",
@@ -83,7 +83,7 @@ export default function ContactPage() {
               </h2>
               <p className="mt-5 leading-8 text-slate-600">
                 Please include product type, quantity, voltage, color, installation
-                method and target market. The inquiry will be sent to {siteConfig.email}.
+                method, WhatsApp and target market. The inquiry will be sent to {siteConfig.email}.
               </p>
               <div className="mt-8 grid gap-4 rounded border border-slate-200 bg-white p-6 shadow-sm">
                 <div>
@@ -97,13 +97,19 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <div>
+                  <p className="text-sm font-bold uppercase tracking-wide text-ocean">WhatsApp</p>
+                  <a className="mt-1 block font-bold text-ocean" href={siteConfig.whatsappUrl} target="_blank" rel="noreferrer">
+                    {siteConfig.whatsapp}
+                  </a>
+                </div>
+                <div>
                   <p className="text-sm font-bold uppercase tracking-wide text-ocean">Service</p>
                   <p className="mt-1 font-bold text-ink">OEM / ODM / Wholesale</p>
                 </div>
               </div>
             </div>
             <div className="rounded border border-slate-200 bg-white p-6 shadow-lg">
-              <InquiryForm buttonLabel="Get Factory Price" />
+              <InquiryForm buttonLabel="Get Quote" />
             </div>
           </div>
         </section>

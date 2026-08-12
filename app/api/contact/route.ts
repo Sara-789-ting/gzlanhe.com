@@ -15,6 +15,7 @@ type ContactPayload = {
   name?: string;
   company?: string;
   email?: string;
+  whatsapp?: string;
   country?: string;
   productInterested?: string;
   message?: string;
@@ -30,6 +31,7 @@ function validate(payload: ContactPayload) {
     name: clean(payload.name),
     company: clean(payload.company),
     email: clean(payload.email).toLowerCase(),
+    whatsapp: clean(payload.whatsapp),
     country: clean(payload.country),
     productInterested: clean(payload.productInterested),
     message: clean(payload.message),
@@ -74,7 +76,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: result.error }, { status: 400 });
   }
 
-  const emailTo = process.env.EMAIL_TO || "sara@gzlanhe.com";
+  const emailTo = "sales@gzlanhe.com";
   const resendApiKey = process.env.RESEND_API_KEY;
 
   if (!resendApiKey) {
@@ -98,6 +100,9 @@ ${inquiry.company}
 Email:
 ${inquiry.email}
 
+WhatsApp:
+${inquiry.whatsapp || "Not provided"}
+
 Country:
 ${inquiry.country}
 
@@ -118,7 +123,7 @@ ${inquiry.message}
     });
   } catch {
     return NextResponse.json(
-      { error: "Email sending failed. Please try again or email sara@gzlanhe.com directly." },
+      { error: "Email sending failed. Please try again or email sales@gzlanhe.com directly." },
       { status: 502 }
     );
   }

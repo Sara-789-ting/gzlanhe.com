@@ -27,11 +27,11 @@ export const productCategories = [
 ];
 
 export const advantages = [
-  "10+ Years Manufacturing Experience",
+  "IP68 Waterproof",
+  "OEM/ODM Support",
   "Factory Direct Price",
-  "OEM & ODM Service",
-  "IP68 Waterproof Technology",
-  "Worldwide Export"
+  "CE RoHS Certified",
+  "Global Shipping"
 ];
 
 export const applications = [

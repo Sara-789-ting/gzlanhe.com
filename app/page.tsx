@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Award, BadgeCheck, Factory, Globe2, PackageCheck, ShieldCheck, Star, Truck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { ContactActions } from "@/components/ContactActions";
 import { InquiryForm } from "@/components/InquiryForm";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { advantages, applications, productCategories } from "@/lib/products";
@@ -10,8 +11,8 @@ import { siteConfig } from "@/lib/site";
 
 const factoryStrength = [
   {
-    title: "Factory",
-    text: "Manufacturer-focused supply for B2B pool lighting buyers."
+    title: "Factory Capability",
+    text: "Manufacturer-focused supply for B2B pool lighting buyers, importers and project contractors."
   },
   {
     title: "Production Line",
@@ -43,6 +44,20 @@ const faqs = [
 ];
 
 const advantageIcons = [Factory, BadgeCheck, Award, ShieldCheck, Globe2];
+const trustItems = [
+  {
+    title: "Factory Capability",
+    text: "Production planning for LED pool lights, underwater lights, fountain lights and OEM orders."
+  },
+  {
+    title: "Quality Control",
+    text: "Material checks, waterproof structure review and lighting performance inspection before packing."
+  },
+  {
+    title: "Certifications",
+    text: "CE, RoHS and IP68 waterproof testing support for overseas B2B purchasing review."
+  }
+];
 
 export default function Home() {
   return (
@@ -57,7 +72,7 @@ export default function Home() {
                 Factory Direct - MOQ Support - OEM/ODM
               </p>
               <h1 className="max-w-2xl text-4xl font-bold leading-tight tracking-normal sm:text-5xl lg:text-6xl">
-                LED Swimming Pool Light Manufacturer in China
+                Professional LED Pool Light Manufacturer in China
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-cyan-50">
                 Professional manufacturer of IP68 waterproof LED pool lights,
@@ -65,7 +80,7 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="/contact"
+                  href="/contact#inquiry"
                   className="focus-ring rounded bg-signal px-6 py-3 font-bold text-ink shadow-lg hover:bg-amber-300"
                 >
                   Get Quote
@@ -77,6 +92,7 @@ export default function Home() {
                   View Products
                 </a>
               </div>
+              <ContactActions product="LED Swimming Pool Light" />
               <div className="mt-10 grid max-w-xl grid-cols-3 gap-4 text-sm">
                 <div>
                   <strong className="block text-2xl text-white">IP68</strong>
@@ -174,13 +190,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="grid gap-5 md:grid-cols-5">
-              {[
-                "Factory Direct",
-                "Quality Control",
-                "OEM/ODM",
-                "Fast Response",
-                "Global Shipping"
-              ].map((item) => (
+              {advantages.map((item) => (
                 <div key={item} className="rounded border border-slate-200 bg-white p-5 shadow-sm">
                   <BadgeCheck className="mb-4 text-ocean" aria-hidden="true" />
                   <p className="font-bold text-ink">{item}</p>
@@ -239,10 +249,11 @@ export default function Home() {
                 Ready for long-term overseas cooperation
               </h2>
               <div className="mt-8 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-                {["Countries Exported", "Customer Reviews", "Certificates"].map((item) => (
-                  <div key={item} className="rounded border border-slate-200 p-5">
+                {trustItems.map((item) => (
+                  <div key={item.title} className="rounded border border-slate-200 p-5">
                     <Star className="mb-3 text-signal" aria-hidden="true" />
-                    <p className="font-bold">{item}</p>
+                    <p className="font-bold">{item.title}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -271,7 +282,7 @@ export default function Home() {
               </p>
             </div>
             <div className="rounded border border-slate-200 bg-white p-6 shadow-lg">
-              <InquiryForm buttonLabel="Get Factory Price" />
+              <InquiryForm buttonLabel="Get Quote" />
             </div>
           </div>
         </section>

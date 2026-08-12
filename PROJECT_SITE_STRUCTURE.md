@@ -14,7 +14,7 @@ Positioning:
 - TypeScript
 - Tailwind CSS
 - Static SEO pages for product keywords
-- Inquiry form prepared for email delivery to sara@gzlanhe.com
+- Inquiry form prepared for email delivery to sales@gzlanhe.com
 
 ## Directory Structure
 
@@ -105,7 +105,7 @@ Sections:
 Route: `/contact`
 
 Includes:
-- Email: sara@gzlanhe.com
+- Email: sales@gzlanhe.com
 - Inquiry form fields: Name, Company, Email, Country, Product Interested, Message
 
 ## SEO Plan

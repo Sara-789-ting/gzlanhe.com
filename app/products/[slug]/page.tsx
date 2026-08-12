@@ -65,13 +65,6 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
               <p className="mt-6 max-w-2xl text-lg leading-8 text-cyan-50">
                 {product.description}
               </p>
-              <a
-                href="/contact"
-                className="focus-ring mt-8 inline-flex items-center gap-2 rounded bg-signal px-6 py-3 font-bold text-ink shadow-lg hover:bg-amber-300"
-              >
-                Get Factory Price
-                <ArrowRight size={18} aria-hidden="true" />
-              </a>
               <ContactActions product={product.name} />
             </div>
             <div className="overflow-hidden rounded border border-white/30 bg-white shadow-2xl">
@@ -228,10 +221,10 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
               ))}
             </div>
             <a
-              href="/contact"
+              href="/contact#inquiry"
               className="focus-ring mt-8 inline-flex items-center gap-2 rounded bg-ocean px-6 py-3 font-bold text-white hover:bg-cyan-800"
             >
-              Get Factory Price
+              Get Quote
               <ArrowRight size={18} aria-hidden="true" />
             </a>
           </div>
