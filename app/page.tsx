@@ -220,12 +220,12 @@ export default function Home() {
             </div>
             <div className="grid gap-4 md:grid-cols-5">
               {applications.map((application) => (
-                <div key={application} className="rounded bg-ink p-5 text-white">
-                  <p className="text-lg font-bold">{application}</p>
+                <Link key={application.href} href={application.href} className="focus-ring rounded bg-ink p-5 text-white transition hover:-translate-y-1 hover:bg-ocean">
+                  <h3 className="text-lg font-bold">{application.name}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-300">
-                    IP68 lighting options for durable and clean project results.
+                    {application.description}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { productPages } from "@/lib/productPages";
+import { applicationPages } from "@/lib/applicationPages";
 
 export const productCategories = productPages.map((product) => ({
   name: product.name,
@@ -15,9 +16,9 @@ export const advantages = [
 ];
 
 export const applications = [
-  "Swimming Pool",
-  "Hotel Pool",
-  "Villa Pool",
-  "Water Park",
-  "SPA"
+  ...applicationPages.map((page) => ({
+    name: page.title,
+    href: `/applications/${page.slug}`,
+    description: page.metaDescription
+  }))
 ];

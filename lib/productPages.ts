@@ -8,6 +8,7 @@ export type ProductPage = {
   name: string;
   shortName: string;
   keyword: string;
+  secondaryKeywords: string[];
   searchIntent: string;
   buyingFocus: string;
   title: string;
@@ -19,6 +20,10 @@ export type ProductPage = {
   specs: ProductSpec[];
   advantages: string[];
   applications: string[];
+  applicationSlugs: string[];
+  keyFeatures: string[];
+  availableOptions: string[];
+  installation: string;
   oem: string;
   moq: string;
   certification: string;
@@ -50,81 +55,136 @@ const baseAdvantages = [
 const defaultCertification =
   "Certification support can include CE, RoHS, IP68 waterproof testing and quality inspection documents for overseas purchasing review.";
 
-const pageStrategy: Record<string, { intent: string; focus: string; related: string[] }> = {
+const pageStrategy: Record<
+  string,
+  {
+    intent: string;
+    focus: string;
+    related: string[];
+    secondary: string[];
+    applicationSlugs: string[];
+    installation: string;
+  }
+> = {
   "swimming-pool-light-manufacturer": {
     intent: "finding a long-term LED pool light manufacturer",
     focus: "factory qualification, production stability, OEM service, IP68 testing and export support",
-    related: ["china-led-pool-light-supplier", "oem-pool-light-manufacturer", "ip68-underwater-led-pool-light"]
+    related: ["china-led-pool-light-supplier", "oem-pool-light-manufacturer", "ip68-underwater-led-pool-light"],
+    secondary: ["LED pool light factory", "pool light supplier China", "wholesale swimming pool lights"],
+    applicationSlugs: ["hotel-pool-lighting", "villa-pool-lighting", "water-park-lighting"],
+    installation: "Confirm pool wall type, niche size or surface mounting method before selecting cable length, voltage and control system."
   },
   "ip68-underwater-led-pool-light": {
     intent: "sourcing waterproof underwater pool lights",
     focus: "IP68 waterproof structure, low-voltage safety, cable sealing and underwater installation reliability",
-    related: ["12v-led-pool-light", "stainless-steel-pool-light", "underwater-fountain-light"]
+    related: ["12v-led-pool-light", "stainless-steel-pool-light", "underwater-fountain-light"],
+    secondary: ["underwater pool light supplier", "IP68 LED pool lamp", "waterproof pool light"],
+    applicationSlugs: ["hotel-pool-lighting", "villa-pool-lighting", "spa-pool-lighting"],
+    installation: "Use low-voltage power supply, waterproof junction treatment and correct sealing around the cable outlet for underwater installation."
   },
   "rgb-swimming-pool-light": {
     intent: "buying color changing pool lights for projects",
     focus: "RGB/RGBW control, color effects, controller matching and hotel or villa pool applications",
-    related: ["dmx512-pool-light", "custom-pool-lighting-solution", "12v-led-pool-light"]
+    related: ["dmx512-pool-light", "custom-pool-lighting-solution", "12v-led-pool-light"],
+    secondary: ["color changing pool light", "RGBW pool light", "remote control pool light"],
+    applicationSlugs: ["hotel-pool-lighting", "villa-pool-lighting", "water-park-lighting"],
+    installation: "Plan controller position, cable route and synchronization requirements before choosing RGB, RGBW or DMX control."
   },
   "12v-led-pool-light": {
     intent: "sourcing low-voltage LED pool lights",
     focus: "12V AC/DC options, safer pool installation, replacement demand and distributor stock planning",
-    related: ["24v-swimming-pool-light", "ip68-underwater-led-pool-light", "rgb-swimming-pool-light"]
+    related: ["24v-swimming-pool-light", "ip68-underwater-led-pool-light", "rgb-swimming-pool-light"],
+    secondary: ["low voltage pool light", "12V underwater LED light", "12V pool lamp"],
+    applicationSlugs: ["villa-pool-lighting", "spa-pool-lighting", "hotel-pool-lighting"],
+    installation: "Check transformer compatibility, cable distance and AC/DC requirement before replacing or specifying 12V pool lights."
   },
   "24v-swimming-pool-light": {
     intent: "sourcing 24V pool lights for commercial projects",
     focus: "24V project specification, stable performance, hotel pools, water parks and engineering supply",
-    related: ["12v-led-pool-light", "dmx512-pool-light", "china-led-pool-light-supplier"]
+    related: ["12v-led-pool-light", "dmx512-pool-light", "china-led-pool-light-supplier"],
+    secondary: ["24V pool lamp", "commercial pool light", "24V underwater light"],
+    applicationSlugs: ["hotel-pool-lighting", "water-park-lighting", "fountain-lighting"],
+    installation: "For commercial pools, confirm voltage drop, cable length and control cabinet layout before mass order."
   },
   "stainless-steel-pool-light": {
     intent: "finding durable stainless steel pool lights",
     focus: "stainless steel housing, corrosion resistance, waterproof sealing and long-term underwater use",
-    related: ["ip68-underwater-led-pool-light", "underwater-fountain-light", "fountain-led-light"]
+    related: ["ip68-underwater-led-pool-light", "underwater-fountain-light", "fountain-led-light"],
+    secondary: ["stainless steel underwater light", "durable pool lamp", "IP68 stainless steel light"],
+    applicationSlugs: ["hotel-pool-lighting", "fountain-lighting", "villa-pool-lighting"],
+    installation: "Confirm mounting screws, wall surface and water chemistry requirements when specifying stainless steel underwater lights."
   },
   "dmx512-pool-light": {
     intent: "buying programmable RGB pool lighting",
     focus: "DMX512 control, RGB/RGBW effects, synchronized project lighting and commercial pool applications",
-    related: ["rgb-swimming-pool-light", "fountain-led-light", "custom-pool-lighting-solution"]
+    related: ["rgb-swimming-pool-light", "fountain-led-light", "custom-pool-lighting-solution"],
+    secondary: ["DMX RGB pool light", "programmable pool light", "DMX512 underwater light"],
+    applicationSlugs: ["hotel-pool-lighting", "water-park-lighting", "fountain-lighting"],
+    installation: "DMX projects should confirm controller protocol, address planning, cable route and waterproof connection details before production."
   },
   "fountain-led-light": {
     intent: "sourcing fountain lights from a manufacturer",
     focus: "IP68 underwater fountain use, RGB/DMX options, stainless steel body and engineering cooperation",
-    related: ["underwater-fountain-light", "waterfall-led-light", "dmx512-pool-light"]
+    related: ["underwater-fountain-light", "waterfall-led-light", "dmx512-pool-light"],
+    secondary: ["fountain light manufacturer", "RGB fountain light", "DMX fountain lighting"],
+    applicationSlugs: ["fountain-lighting", "hotel-pool-lighting", "water-park-lighting"],
+    installation: "Fountain projects should define nozzle position, water depth, cable outlet and control system before selecting fixture power."
   },
   "waterfall-led-light": {
     intent: "finding LED lighting for pool waterfalls",
     focus: "waterfall, spillway and water curtain applications with waterproof LED lighting effects",
-    related: ["fountain-led-light", "underwater-fountain-light", "pond-led-underwater-light"]
+    related: ["fountain-led-light", "underwater-fountain-light", "pond-led-underwater-light"],
+    secondary: ["pool waterfall light", "spillway LED light", "water curtain light"],
+    applicationSlugs: ["fountain-lighting", "villa-pool-lighting", "hotel-pool-lighting"],
+    installation: "Check spillway width, water flow direction and mounting space so the beam angle can match the waterfall effect."
   },
   "spa-pool-light": {
     intent: "buying compact lights for SPA pools",
     focus: "compact size, low-voltage lighting, IP68 sealing and replacement demand for SPA and small pools",
-    related: ["12v-led-pool-light", "ip68-underwater-led-pool-light", "custom-pool-lighting-solution"]
+    related: ["12v-led-pool-light", "ip68-underwater-led-pool-light", "custom-pool-lighting-solution"],
+    secondary: ["compact underwater light", "SPA LED light", "small pool light"],
+    applicationSlugs: ["spa-pool-lighting", "villa-pool-lighting", "hotel-pool-lighting"],
+    installation: "SPA lighting should confirm compact mounting size, low-voltage power supply and replacement compatibility."
   },
   "underwater-fountain-light": {
     intent: "sourcing underwater lights for fountains",
     focus: "submerged installation, RGB control, waterproof cable sealing and landscape project demand",
-    related: ["fountain-led-light", "dmx512-pool-light", "pond-led-underwater-light"]
+    related: ["fountain-led-light", "dmx512-pool-light", "pond-led-underwater-light"],
+    secondary: ["submersible fountain light", "IP68 fountain lamp", "underwater RGB fountain light"],
+    applicationSlugs: ["fountain-lighting", "water-park-lighting", "hotel-pool-lighting"],
+    installation: "Submerged fountain lights need waterproof cable routing, stable mounting and suitable beam angle for water movement."
   },
   "pond-led-underwater-light": {
     intent: "buying underwater lights for ponds and landscapes",
     focus: "garden pond lighting, landscape water features, IP68 sealing and outdoor project use",
-    related: ["underwater-fountain-light", "waterfall-led-light", "fountain-led-light"]
+    related: ["underwater-fountain-light", "waterfall-led-light", "fountain-led-light"],
+    secondary: ["pond underwater light", "garden pond LED light", "landscape underwater light"],
+    applicationSlugs: ["fountain-lighting", "villa-pool-lighting", "spa-pool-lighting"],
+    installation: "For ponds and outdoor water features, confirm water depth, cable protection and mounting base before choosing light power."
   },
   "oem-pool-light-manufacturer": {
     intent: "finding an OEM pool light factory",
     focus: "private label, custom packaging, voltage customization, logo service and repeat wholesale supply",
-    related: ["custom-pool-lighting-solution", "swimming-pool-light-manufacturer", "china-led-pool-light-supplier"]
+    related: ["custom-pool-lighting-solution", "swimming-pool-light-manufacturer", "china-led-pool-light-supplier"],
+    secondary: ["private label pool light", "OEM LED pool lamp", "ODM pool light factory"],
+    applicationSlugs: ["hotel-pool-lighting", "villa-pool-lighting", "water-park-lighting"],
+    installation: "OEM projects should confirm target market standards, packaging language, cable specification and installation accessories."
   },
   "china-led-pool-light-supplier": {
     intent: "finding a China LED pool light supplier",
     focus: "factory direct supply, export packing, distributor support, bulk order planning and global shipping",
-    related: ["swimming-pool-light-manufacturer", "oem-pool-light-manufacturer", "12v-led-pool-light"]
+    related: ["swimming-pool-light-manufacturer", "oem-pool-light-manufacturer", "12v-led-pool-light"],
+    secondary: ["LED pool light supplier China", "pool light wholesale", "China pool light factory"],
+    applicationSlugs: ["hotel-pool-lighting", "villa-pool-lighting", "spa-pool-lighting"],
+    installation: "For supply programs, confirm model mix, packaging, spare parts, market voltage and delivery schedule before bulk order."
   },
   "custom-pool-lighting-solution": {
     intent: "requesting a custom pool lighting solution",
     focus: "project specification, OEM/ODM customization, RGB/RGBW control, voltage and cable requirements",
-    related: ["oem-pool-light-manufacturer", "rgb-swimming-pool-light", "dmx512-pool-light"]
+    related: ["oem-pool-light-manufacturer", "rgb-swimming-pool-light", "dmx512-pool-light"],
+    secondary: ["custom pool lighting", "project pool lighting solution", "OEM swimming pool light"],
+    applicationSlugs: ["hotel-pool-lighting", "water-park-lighting", "fountain-lighting"],
+    installation: "Custom projects should provide drawings, water depth, voltage, control mode and installation environment for technical review."
   }
 };
 
@@ -305,11 +365,30 @@ function advantagesFor(name: string, keyword: string) {
   ];
 }
 
+function keyFeaturesFor(product: (typeof productSeed)[number]) {
+  return [
+    `${product.name} designed for B2B procurement and project specification`,
+    "IP68 waterproof design direction for pool and underwater environments",
+    "12V / 24V, RGB / RGBW and DMX512 options depending on project demand",
+    "Factory support for MOQ planning, OEM/ODM customization and bulk orders"
+  ];
+}
+
+function optionsFor(product: (typeof productSeed)[number]) {
+  return [
+    `Voltage options for ${product.keyword}: 12V, 24V or project-specific low-voltage requirements`,
+    "Color options: white, warm white, RGB, RGBW and DMX512 control by model",
+    "Material options: stainless steel, ABS or PC housing according to application",
+    "OEM options: logo, packaging, cable length, connector, label and specification sheet"
+  ];
+}
+
 export const productPages: ProductPage[] = productSeed.map((product) => ({
   slug: product.slug,
   name: product.name,
   shortName: product.name,
   keyword: product.keyword,
+  secondaryKeywords: pageStrategy[product.slug].secondary,
   searchIntent: pageStrategy[product.slug].intent,
   buyingFocus: pageStrategy[product.slug].focus,
   title: product.title,
@@ -321,6 +400,10 @@ export const productPages: ProductPage[] = productSeed.map((product) => ({
   specs: specsWith(product.specOverrides),
   advantages: advantagesFor(product.name, product.keyword),
   applications: product.applications,
+  applicationSlugs: pageStrategy[product.slug].applicationSlugs,
+  keyFeatures: keyFeaturesFor(product),
+  availableOptions: optionsFor(product),
+  installation: pageStrategy[product.slug].installation,
   oem:
     "OEM and ODM support is available for logo, cable length, voltage, color control, product labeling, export packaging and distributor product lines.",
   moq:

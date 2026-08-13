@@ -10,6 +10,7 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
 import { ProductJsonLd } from "@/components/ProductJsonLd";
+import { applicationPages } from "@/lib/applicationPages";
 import { getProductBySlug, productPages } from "@/lib/productPages";
 import type { ProductPage } from "@/lib/productPages";
 import { siteConfig } from "@/lib/site";
@@ -61,6 +62,9 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
   const relatedProducts = product.relatedSlugs
     .map((relatedSlug) => getProductBySlug(relatedSlug))
     .filter((item): item is ProductPage => Boolean(item));
+  const relatedApplications = product.applicationSlugs
+    .map((applicationSlug) => applicationPages.find((page) => page.slug === applicationSlug))
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
   return (
     <>
@@ -133,9 +137,7 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
         <section className="py-20">
           <div className="section-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
-              <p className="text-sm font-bold uppercase tracking-wide text-ocean">
-                Product Introduction
-              </p>
+              <p className="text-sm font-bold uppercase tracking-wide text-ocean">Product Overview</p>
               <h2 className="mt-3 text-3xl font-bold text-ink">
                 {product.name} for {product.searchIntent}
               </h2>
@@ -186,6 +188,27 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
           </div>
         </section>
 
+        <section className="bg-mist py-20">
+          <div className="section-shell grid gap-8 lg:grid-cols-3">
+            <div className="rounded border border-cyan-100 bg-white p-6 shadow-sm lg:col-span-2">
+              <p className="text-sm font-bold uppercase tracking-wide text-ocean">Key Features</p>
+              <h2 className="mt-3 text-3xl font-bold text-ink">What B2B Buyers Should Confirm</h2>
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {product.keyFeatures.map((feature) => (
+                  <div key={feature} className="rounded border border-slate-200 p-5">
+                    <h3 className="font-bold text-ink">{feature}</h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded border border-cyan-100 bg-white p-6 shadow-sm">
+              <p className="text-sm font-bold uppercase tracking-wide text-ocean">Installation</p>
+              <h2 className="mt-3 text-2xl font-bold text-ink">Project Installation Notes</h2>
+              <p className="mt-4 leading-8 text-slate-600">{product.installation}</p>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-white py-20">
           <div className="section-shell grid gap-10 lg:grid-cols-2">
             <div>
@@ -218,6 +241,16 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
 
         <section className="py-20">
           <div className="section-shell grid gap-6 lg:grid-cols-2">
+            <div className="rounded border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
+              <h2 className="text-2xl font-bold text-ink">Available Options</h2>
+              <div className="mt-5 grid gap-4 md:grid-cols-2">
+                {product.availableOptions.map((option) => (
+                  <div key={option} className="rounded bg-mist p-4">
+                    <h3 className="font-bold text-ink">{option}</h3>
+                  </div>
+                ))}
+              </div>
+            </div>
             <div className="rounded border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="text-2xl font-bold text-ink">OEM/ODM Support</h2>
               <p className="mt-4 leading-8 text-slate-600">{product.oem}</p>
@@ -231,6 +264,31 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
               <p className="mt-4 leading-8 text-slate-600">
                 {product.certification}
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-20">
+          <div className="section-shell">
+            <div className="mb-8">
+              <p className="text-sm font-bold uppercase tracking-wide text-ocean">Application Links</p>
+              <h2 className="mt-3 text-3xl font-bold text-ink">Where Buyers Use {product.name}</h2>
+              <p className="mt-4 max-w-3xl leading-8 text-slate-600">
+                Review application pages to compare IP68 waterproof requirements,
+                voltage options, RGB/RGBW control and project installation details.
+              </p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {relatedApplications.map((application) => (
+                <Link
+                  key={application.slug}
+                  href={`/applications/${application.slug}`}
+                  className="focus-ring rounded border border-slate-200 bg-slate-50 p-5 transition hover:border-ocean hover:bg-white"
+                >
+                  <h3 className="text-lg font-bold text-ink">{application.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{application.metaDescription}</p>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
