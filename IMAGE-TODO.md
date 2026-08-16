@@ -19,6 +19,10 @@ Do not block the current SEO, Google indexing, and B2B inquiry workflow because 
 | `/blog/choose-swimming-pool-light-manufacturer-china` | Article detail | Real product range or OEM packing image | Recommended size 1200x800. Alt: LED swimming pool light product range for B2B buyers. |
 | `/blog/12v-vs-24v-pool-lights-commercial-projects` | Article hero | 12V and 24V LED pool light comparison or product set | Recommended size 1600x900. Alt: 12V and 24V LED pool lights for commercial projects. |
 | `/blog/12v-vs-24v-pool-lights-commercial-projects` | Article detail | Wiring, transformer, controller or installation detail image | Recommended size 1200x800. Alt: low voltage pool light wiring and installation detail. |
+| `/blog/rgb-vs-rgbw-pool-lights` | Article hero | Real RGB/RGBW pool light product set or color-changing pool effect | Recommended size 1600x900. Alt: RGB and RGBW pool lights for commercial swimming pool projects. |
+| `/blog/rgb-vs-rgbw-pool-lights` | Article detail | RGB/RGBW controller, LED detail or white light comparison image | Recommended size 1200x800. Alt: RGBW pool light control and color effect detail. |
+| `/blog/dmx512-pool-lighting-commercial-projects` | Article hero | Real DMX512 pool lighting project or synchronized RGB pool effect | Recommended size 1600x900. Alt: DMX512 pool lighting for hotel and water park projects. |
+| `/blog/dmx512-pool-lighting-commercial-projects` | Article detail | DMX512 controller, wiring or address planning image | Recommended size 1200x800. Alt: DMX512 pool light controller and wiring detail. |
 | `/products/ip68-underwater-led-pool-light` | Installation | Real installation photo for IP68 underwater pool light | Existing IP68 set is mostly complete, but installation image is missing. |
 | `/products/rgb-swimming-pool-light` | Controller | Real RGB/RGBW pool light controller or remote-control system photo | Do not use DMX controller unless it clearly belongs to RGB pool light setup. |
 | `/products/swimming-pool-light-manufacturer` | OEM packing | Real OEM logo/label/custom packing photo | Existing factory/QC/export packing images are usable. |

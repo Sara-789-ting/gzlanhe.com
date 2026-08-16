@@ -223,6 +223,30 @@ export default async function BlogPostPage({ params }: BlogRouteProps) {
                 </div>
               </section>
 
+              <section className="border-t border-slate-200 py-10">
+                <h2 className="text-3xl font-bold text-ink">Manufacturer and RFQ Support</h2>
+                <div className="mt-5 grid gap-4 md:grid-cols-2">
+                  <Link
+                    href="/factory"
+                    className="focus-ring rounded border border-slate-200 bg-slate-50 p-5 transition hover:border-ocean hover:bg-white"
+                  >
+                    <h3 className="font-bold text-ink">Review Factory Capability</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">
+                      Check manufacturer, production and quality-control information before choosing a supplier.
+                    </p>
+                  </Link>
+                  <Link
+                    href="/contact#inquiry"
+                    className="focus-ring rounded border border-slate-200 bg-slate-50 p-5 transition hover:border-ocean hover:bg-white"
+                  >
+                    <h3 className="font-bold text-ink">Send RFQ to Manufacturer</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">
+                      Send project type, voltage, quantity, control method and destination country for recommendation.
+                    </p>
+                  </Link>
+                </div>
+              </section>
+
               <section id="faq" className="scroll-mt-24 border-t border-slate-200 py-10">
                 <h2 className="text-3xl font-bold text-ink">FAQ</h2>
                 <div className="mt-6 grid gap-4">

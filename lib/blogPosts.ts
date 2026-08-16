@@ -256,6 +256,233 @@ export const blogPosts: BlogPost[] = [
           "Contractors should send project type, pool size, voltage requirement, cable length, control method, quantity and destination country."
       }
     ]
+  },
+  {
+    slug: "rgb-vs-rgbw-pool-lights",
+    title: "RGB vs RGBW Pool Lights: What B2B Buyers Should Confirm",
+    metaTitle: "RGB vs RGBW Pool Lights for Commercial Pool Projects",
+    metaDescription:
+      "Compare RGB and RGBW pool lights for hotel pools, villas, water parks and commercial projects. Learn what importers and contractors should confirm before ordering.",
+    primaryKeyword: "RGB vs RGBW pool lights",
+    secondaryKeywords: [
+      "RGB swimming pool light",
+      "RGBW pool light",
+      "color changing pool light",
+      "commercial pool lighting"
+    ],
+    searchIntent: "Commercial investigation for color-changing pool light procurement",
+    buyerStage: "MOFU / BOFU",
+    targetProducts: [
+      { label: "RGB Swimming Pool Light", href: "/products/rgb-swimming-pool-light" },
+      { label: "DMX512 Pool Light", href: "/products/dmx512-pool-light" },
+      { label: "Custom Swimming Pool Lighting Solution", href: "/products/custom-pool-lighting-solution" }
+    ],
+    targetApplications: [
+      { label: "Hotel Swimming Pool Lighting", href: "/applications/hotel-pool-lighting" },
+      { label: "Villa Swimming Pool Lighting", href: "/applications/villa-pool-lighting" },
+      { label: "Water Park Pool Lighting", href: "/applications/water-park-lighting" }
+    ],
+    ctaProduct: "RGB / RGBW Swimming Pool Light",
+    introduction: [
+      "RGB and RGBW pool lights are both used for color-changing swimming pool projects, but they are not the same purchasing decision. For importers, distributors, contractors and hotel project buyers, the difference affects white light quality, controller selection, wiring, quotation and long-term project satisfaction.",
+      "This guide explains how B2B buyers can compare RGB and RGBW pool lights before sending an RFQ to a manufacturer."
+    ],
+    sections: [
+      {
+        id: "difference",
+        heading: "1. What is the difference between RGB and RGBW pool lights?",
+        paragraphs: [
+          "RGB pool lights combine red, green and blue LEDs to create color-changing effects. RGBW pool lights add a dedicated white LED channel, which can help projects that need both color effects and more stable white lighting.",
+          "The right choice depends on the expected lighting effect, project type, controller compatibility and whether the buyer needs decorative color scenes, practical white light or both."
+        ]
+      },
+      {
+        id: "commercial-choice",
+        heading: "2. Which option is better for commercial pool projects?",
+        paragraphs: [
+          "Commercial projects should not choose RGB or RGBW only by price. Hotel pools, villa pools and water parks may have different needs for atmosphere, white light, synchronized effects and maintenance planning.",
+          "If the project needs frequent white lighting for evening use, ask the manufacturer whether RGBW is more suitable. If the project mainly needs color-changing scenes, RGB may be enough depending on the selected model and control system."
+        ],
+        bullets: [
+          "Hotel pools often need balanced atmosphere and usable white light.",
+          "Villa pools may focus on decorative color effects and remote control.",
+          "Water parks may need stronger synchronization and controller planning.",
+          "Distributors should confirm which option is more common in their target market."
+        ]
+      },
+      {
+        id: "white-light",
+        heading: "3. White light demand should be discussed before ordering",
+        paragraphs: [
+          "A common purchasing mistake is assuming RGB mixed white can replace a dedicated white channel. In many projects, white light quality depends on LED configuration, control method and product design.",
+          "If the buyer needs clean white or warm white lighting for a commercial pool, ask the manufacturer to confirm whether RGBW or another model is more suitable before placing a bulk order."
+        ]
+      },
+      {
+        id: "controller",
+        heading: "4. Controller compatibility matters",
+        table: {
+          headers: ["Item", "What buyers should confirm"],
+          rows: [
+            ["Control method", "Remote control, external controller, RGB/RGBW controller or DMX512 depends on project design."],
+            ["Voltage", "Confirm whether the selected RGB or RGBW model matches 12V or 24V power supply."],
+            ["Wiring", "RGBW may require different wiring or controller planning than RGB."],
+            ["Synchronization", "Multi-light projects should confirm how lights will be synchronized."],
+            ["Replacement demand", "For replacement projects, confirm compatibility with existing transformer and controller."]
+          ]
+        }
+      },
+      {
+        id: "specification",
+        heading: "5. Parameters to confirm before requesting a quotation",
+        bullets: [
+          "Project type: hotel, villa, water park, SPA or distributor stock",
+          "Voltage requirement: 12V, 24V or project-specific low voltage",
+          "Color option: RGB, RGBW, white or warm white",
+          "Control method: remote, controller, DMX512 or other project requirement",
+          "Installation method and cable length",
+          "Estimated quantity, destination country and OEM packaging needs"
+        ]
+      },
+      {
+        id: "rfq",
+        heading: "6. How to ask the manufacturer for the right recommendation",
+        paragraphs: [
+          "Before comparing price, send the manufacturer your project type, required lighting effect, voltage, controller requirement and estimated quantity. If the information is not confirmed, use phrases such as \"depends on project requirements\" and ask for a technical recommendation before ordering.",
+          "This helps avoid buying a color-changing pool light that looks suitable in photos but does not match the installation or control system."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Is RGBW better than RGB for pool lights?",
+        answer:
+          "RGBW can be better when the project needs a dedicated white light channel, but the right choice depends on the project requirement, controller and target lighting effect."
+      },
+      {
+        question: "Can RGB and RGBW pool lights use the same controller?",
+        answer:
+          "Not always. Buyers should confirm controller compatibility, voltage, wiring and synchronization with the manufacturer before ordering."
+      },
+      {
+        question: "What should distributors confirm before buying RGB pool lights?",
+        answer:
+          "Distributors should confirm voltage, color option, controller type, cable requirement, packaging, target market and estimated quantity before requesting a quotation."
+      }
+    ]
+  },
+  {
+    slug: "dmx512-pool-lighting-commercial-projects",
+    title: "DMX512 Pool Lighting Guide for Commercial Projects",
+    metaTitle: "DMX512 Pool Lighting Guide for Commercial Projects",
+    metaDescription:
+      "A B2B guide to DMX512 pool lighting for hotels, resorts, water parks and fountain projects. Learn what buyers should confirm before ordering DMX pool lights.",
+    primaryKeyword: "DMX512 pool lighting",
+    secondaryKeywords: [
+      "DMX512 pool light",
+      "DMX pool lighting",
+      "DMX underwater light",
+      "commercial pool lighting"
+    ],
+    searchIntent: "Commercial investigation for programmable pool lighting projects",
+    buyerStage: "MOFU / BOFU",
+    targetProducts: [
+      { label: "DMX512 Pool Light", href: "/products/dmx512-pool-light" },
+      { label: "RGB Swimming Pool Light", href: "/products/rgb-swimming-pool-light" },
+      { label: "Underwater Fountain Light", href: "/products/underwater-fountain-light" }
+    ],
+    targetApplications: [
+      { label: "Hotel Swimming Pool Lighting", href: "/applications/hotel-pool-lighting" },
+      { label: "Water Park Pool Lighting", href: "/applications/water-park-lighting" },
+      { label: "Fountain Lighting Project", href: "/applications/fountain-lighting" }
+    ],
+    ctaProduct: "DMX512 Pool Light",
+    introduction: [
+      "DMX512 pool lighting is used when commercial projects need programmable color effects, multi-light synchronization and more controlled lighting scenes. It is especially relevant for hotels, resorts, water parks, public pools and fountain projects.",
+      "For B2B buyers, the key question is not only whether a pool light supports DMX512. Buyers also need to confirm controller planning, wiring, voltage, RGB/RGBW options, installation environment and project parameters before requesting a quotation."
+    ],
+    sections: [
+      {
+        id: "what-is-dmx512",
+        heading: "1. What is DMX512 pool lighting?",
+        paragraphs: [
+          "DMX512 is a control method used for programmable lighting systems. In pool lighting projects, it can help control multiple lights, create synchronized color effects and manage lighting scenes through a compatible controller.",
+          "The final system depends on the selected light model, controller, wiring design and project requirement. Buyers should confirm compatibility with the manufacturer before ordering."
+        ]
+      },
+      {
+        id: "project-types",
+        heading: "2. Which commercial projects may need DMX512?",
+        bullets: [
+          "Hotel and resort swimming pools requiring synchronized lighting scenes",
+          "Water parks with multiple pool zones or attraction areas",
+          "Commercial pools where lighting is part of the guest experience",
+          "Fountain and water feature projects with RGB or RGBW effects",
+          "Engineering projects where a lighting designer specifies DMX control"
+        ]
+      },
+      {
+        id: "controller-planning",
+        heading: "3. Controller planning should come before quotation",
+        paragraphs: [
+          "DMX512 projects need clearer planning than basic single-color pool light orders. Buyers should confirm whether the project already has a controller design, how many lights need synchronization and whether the installer has wiring requirements.",
+          "If the control system is not yet confirmed, ask the manufacturer what information is needed before recommending a DMX512 pool light model."
+        ]
+      },
+      {
+        id: "wiring",
+        heading: "4. Wiring and synchronization checklist",
+        table: {
+          headers: ["Project item", "What to confirm before ordering"],
+          rows: [
+            ["Light quantity", "Number of lights affects controller and address planning."],
+            ["Voltage", "Confirm 12V, 24V or project-specific low-voltage requirement."],
+            ["Cable route", "Cable distance and waterproof junction treatment should be reviewed."],
+            ["Controller", "Confirm DMX512 compatibility and control method before production."],
+            ["RGB/RGBW", "Choose RGB or RGBW based on color effects and white light demand."],
+            ["Installation", "Confirm wall type, mounting method, water depth and maintenance access."]
+          ]
+        }
+      },
+      {
+        id: "rgb-rgbw",
+        heading: "5. RGB or RGBW for DMX512 projects?",
+        paragraphs: [
+          "DMX512 can be used with different color configurations depending on the product design. RGB may be suitable for decorative color scenes, while RGBW may be considered when the project also needs a dedicated white channel.",
+          "Buyers should not assume every DMX512 pool light has the same LED configuration. Confirm RGB, RGBW, voltage and controller details before requesting bulk pricing."
+        ]
+      },
+      {
+        id: "rfq",
+        heading: "6. RFQ information for DMX512 pool lighting",
+        bullets: [
+          "Project type: hotel, resort, water park, fountain or commercial pool",
+          "Number of lights and lighting zones",
+          "Voltage and power supply plan",
+          "RGB or RGBW requirement",
+          "Controller or DMX system information",
+          "Cable distance, installation method and water depth",
+          "Destination country, estimated quantity and OEM requirements"
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Do all RGB pool lights support DMX512?",
+        answer:
+          "No. Buyers should confirm whether the specific model supports DMX512 and whether the controller, wiring and voltage match the project requirement."
+      },
+      {
+        question: "Which projects are suitable for DMX512 pool lighting?",
+        answer:
+          "DMX512 is commonly considered for hotels, resorts, water parks, commercial pools and fountain projects where synchronized lighting scenes are required."
+      },
+      {
+        question: "What should I send before asking for a DMX512 pool light quotation?",
+        answer:
+          "Send project type, light quantity, voltage, RGB/RGBW requirement, controller information, cable distance, installation method and destination country."
+      }
+    ]
   }
 ];
 
