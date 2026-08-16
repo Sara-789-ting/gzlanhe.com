@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Certificates | LED Pool Light Quality Inspection",
   description:
     "GZLANHE certificate and quality inspection page for CE, RoHS, IP68 waterproof testing and LED pool light quality control.",
+  alternates: {
+    canonical: `${siteConfig.url}/certificates`
+  },
   keywords: [
     "LED pool light certificate",
     "CE pool light",

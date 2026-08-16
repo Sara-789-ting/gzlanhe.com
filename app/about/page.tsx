@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "About Us | LED Pool Light Manufacturer in China",
   description:
     "Learn about GZLANHE, a China LED pool light manufacturer supplying IP68 waterproof pool lights, underwater lights and OEM lighting solutions worldwide.",
+  alternates: {
+    canonical: `${siteConfig.url}/about`
+  },
   keywords: [
     "LED pool light manufacturer China",
     "IP68 underwater light factory",

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Factory Strength | LED Pool Light Factory China",
   description:
     "View GZLANHE factory overview, production line, quality control, testing equipment, packaging and shipping for LED pool lights.",
+  alternates: {
+    canonical: `${siteConfig.url}/factory`
+  },
   keywords: [
     "LED pool light factory",
     "pool light production line",

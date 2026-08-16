@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   title: "Contact LED Pool Light Manufacturer",
   description:
     "Contact Lanhe Pool Lighting for LED pool light factory price, WhatsApp inquiry, OEM service and custom underwater lighting solutions.",
+  alternates: {
+    canonical: `${siteConfig.url}/contact`
+  },
   keywords: [
     "contact LED pool light manufacturer",
     "LED pool light factory price",
