@@ -15,6 +15,10 @@ Do not block the current SEO, Google indexing, and B2B inquiry workflow because 
 
 | Page URL | Missing Image Type | Needed Image | Notes |
 |---|---|---|---|
+| `/blog/choose-swimming-pool-light-manufacturer-china` | Article hero | Factory exterior, production line, QC or export packing image | Recommended size 1600x900. Alt: LED pool light manufacturer factory and quality control. |
+| `/blog/choose-swimming-pool-light-manufacturer-china` | Article detail | Real product range or OEM packing image | Recommended size 1200x800. Alt: LED swimming pool light product range for B2B buyers. |
+| `/blog/12v-vs-24v-pool-lights-commercial-projects` | Article hero | 12V and 24V LED pool light comparison or product set | Recommended size 1600x900. Alt: 12V and 24V LED pool lights for commercial projects. |
+| `/blog/12v-vs-24v-pool-lights-commercial-projects` | Article detail | Wiring, transformer, controller or installation detail image | Recommended size 1200x800. Alt: low voltage pool light wiring and installation detail. |
 | `/products/ip68-underwater-led-pool-light` | Installation | Real installation photo for IP68 underwater pool light | Existing IP68 set is mostly complete, but installation image is missing. |
 | `/products/rgb-swimming-pool-light` | Controller | Real RGB/RGBW pool light controller or remote-control system photo | Do not use DMX controller unless it clearly belongs to RGB pool light setup. |
 | `/products/swimming-pool-light-manufacturer` | OEM packing | Real OEM logo/label/custom packing photo | Existing factory/QC/export packing images are usable. |

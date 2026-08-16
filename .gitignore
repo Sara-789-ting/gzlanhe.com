@@ -4,3 +4,5 @@
 .next
 node_modules
 dev-server*.log
+next-start*.log
+*.pid

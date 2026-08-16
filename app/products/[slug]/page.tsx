@@ -11,6 +11,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
 import { ProductJsonLd } from "@/components/ProductJsonLd";
 import { applicationPages } from "@/lib/applicationPages";
+import { blogPosts } from "@/lib/blogPosts";
 import { getProductBySlug, productPages } from "@/lib/productPages";
 import type { ProductPage } from "@/lib/productPages";
 import { siteConfig } from "@/lib/site";
@@ -65,6 +66,9 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
   const relatedApplications = product.applicationSlugs
     .map((applicationSlug) => applicationPages.find((page) => page.slug === applicationSlug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
+  const relatedGuides = blogPosts.filter((post) =>
+    post.targetProducts.some((target) => target.href === `/products/${product.slug}`)
+  );
 
   return (
     <>
@@ -313,6 +317,33 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
             </a>
           </div>
         </section>
+
+        {relatedGuides.length ? (
+          <section className="bg-white py-20">
+            <div className="section-shell">
+              <div className="mb-8">
+                <p className="text-sm font-bold uppercase tracking-wide text-ocean">Related Guides</p>
+                <h2 className="mt-3 text-3xl font-bold text-ink">Buyer Guides for {product.name}</h2>
+                <p className="mt-4 max-w-3xl leading-8 text-slate-600">
+                  Review purchasing guides before confirming voltage, waterproof
+                  requirements, OEM details or project specifications.
+                </p>
+              </div>
+              <div className="grid gap-5 md:grid-cols-2">
+                {relatedGuides.map((guide) => (
+                  <Link
+                    key={guide.slug}
+                    href={`/blog/${guide.slug}`}
+                    className="focus-ring rounded border border-slate-200 bg-slate-50 p-5 transition hover:border-ocean hover:bg-white"
+                  >
+                    <h3 className="text-lg font-bold text-ink">{guide.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{guide.metaDescription}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="bg-white py-20">
           <div className="section-shell">
