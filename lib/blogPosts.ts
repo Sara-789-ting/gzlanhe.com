@@ -483,6 +483,236 @@ export const blogPosts: BlogPost[] = [
           "Send project type, light quantity, voltage, RGB/RGBW requirement, controller information, cable distance, installation method and destination country."
       }
     ]
+  },
+  {
+    slug: "oem-pool-lights-importers-bulk-ordering",
+    title: "OEM Pool Lights: What Importers Should Confirm Before Bulk Ordering",
+    metaTitle: "OEM Pool Lights: What Importers Should Confirm Before Bulk Ordering",
+    metaDescription:
+      "A B2B buyer guide for importers and distributors sourcing OEM pool lights. Learn what to confirm before bulk ordering private label LED pool lights.",
+    primaryKeyword: "OEM pool lights",
+    secondaryKeywords: [
+      "OEM pool light manufacturer",
+      "private label pool light",
+      "custom pool lighting",
+      "bulk order pool lights"
+    ],
+    searchIntent: "Commercial investigation for OEM and bulk purchasing decisions",
+    buyerStage: "BOFU",
+    targetProducts: [
+      { label: "OEM Pool Light Manufacturer", href: "/products/oem-pool-light-manufacturer" },
+      { label: "Custom Swimming Pool Lighting Solution", href: "/products/custom-pool-lighting-solution" },
+      { label: "China LED Pool Light Supplier", href: "/products/china-led-pool-light-supplier" }
+    ],
+    targetApplications: [
+      { label: "Hotel Swimming Pool Lighting", href: "/applications/hotel-pool-lighting" },
+      { label: "Villa Swimming Pool Lighting", href: "/applications/villa-pool-lighting" },
+      { label: "Water Park Pool Lighting", href: "/applications/water-park-lighting" }
+    ],
+    ctaProduct: "OEM Pool Lights",
+    introduction: [
+      "OEM pool lights are not only a product purchase. For importers, distributors and private label buyers, the order often includes logo, packaging, voltage, cable length, product documentation and repeat supply planning.",
+      "Before placing a bulk order, B2B buyers should confirm what can be customized, what depends on the selected model and what information the manufacturer needs before quotation."
+    ],
+    sections: [
+      {
+        id: "oem-scope",
+        heading: "1. Define the OEM scope before asking for price",
+        paragraphs: [
+          "A clear OEM inquiry should explain whether the buyer needs custom logo, carton label, product label, manual, cable length, connector, voltage option or market-specific packaging.",
+          "Not every customization is available for every model. Buyers should confirm with the manufacturer before ordering instead of assuming all OEM details can be changed after production starts."
+        ],
+        bullets: [
+          "Confirm logo and label requirements.",
+          "Ask whether custom packaging is available for the selected model.",
+          "Confirm voltage, cable and color-control requirements before bulk order.",
+          "Ask what information is needed for private label documentation."
+        ]
+      },
+      {
+        id: "product-selection",
+        heading: "2. Choose the right pool light model for your target market",
+        paragraphs: [
+          "Importers and distributors should match the model to the target market, installation habit and customer segment. A hotel project buyer may need different specifications from a wholesale buyer building a stock program.",
+          "If the model choice is not confirmed, share your market, expected quantity, voltage and application with the manufacturer for recommendation."
+        ]
+      },
+      {
+        id: "bulk-order",
+        heading: "3. Bulk order details to confirm",
+        table: {
+          headers: ["Order item", "What to confirm"],
+          rows: [
+            ["Estimated quantity", "MOQ and price level depend on model, customization and order plan."],
+            ["Voltage", "Confirm 12V, 24V or other low-voltage requirement before quotation."],
+            ["Color option", "White, RGB, RGBW or DMX512 should match market demand."],
+            ["Material", "ABS, PC or stainless steel options depend on product model and application."],
+            ["Packaging", "Confirm carton, label, manual and private label requirements."],
+            ["Destination country", "Shipping, documentation and market requirements may affect preparation."]
+          ]
+        }
+      },
+      {
+        id: "quality-control",
+        heading: "4. Quality and waterproofing questions for OEM buyers",
+        paragraphs: [
+          "For underwater lighting, waterproofing is a serious purchasing point. Ask the manufacturer about IP68 design, cable outlet, sealing structure and inspection process for the selected model.",
+          "If certification or quality documents are required for your market, confirm availability before bulk ordering. Do not list unconfirmed certificates in your own sales material."
+        ]
+      },
+      {
+        id: "packaging-shipping",
+        heading: "5. Packaging and shipping considerations",
+        paragraphs: [
+          "OEM orders often need better coordination between product packaging, outer carton marks, model labels and destination market requirements. If the buyer plans to sell through distributors, packaging consistency becomes part of the product value.",
+          "Shipping method, packing format and delivery schedule depend on order quantity and project requirements, so they should be confirmed during quotation."
+        ]
+      },
+      {
+        id: "rfq",
+        heading: "6. OEM pool light RFQ checklist",
+        bullets: [
+          "Company type and target market",
+          "Required model or product category",
+          "Voltage, power range and color option",
+          "OEM requirement: logo, label, manual, packaging or cable",
+          "Estimated order quantity and repeat order plan",
+          "Destination country and expected shipping schedule",
+          "Application: distributor stock, hotel project, villa pool or water park"
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What should importers confirm before ordering OEM pool lights?",
+        answer:
+          "Importers should confirm model, voltage, color option, packaging, logo, cable length, estimated quantity, destination country and required documentation before bulk ordering."
+      },
+      {
+        question: "Can every pool light model be customized?",
+        answer:
+          "Not always. OEM options depend on the model, quantity and project requirements. Buyers should confirm with the manufacturer before ordering."
+      },
+      {
+        question: "Should buyers confirm MOQ before OEM design work?",
+        answer:
+          "Yes. MOQ depends on model and customization level, so buyers should ask before finalizing packaging, label or private label plans."
+      }
+    ]
+  },
+  {
+    slug: "ip68-pool-lights-b2b-buyers-checklist",
+    title: "IP68 Pool Lights: What B2B Buyers Should Check Before Ordering",
+    metaTitle: "IP68 Pool Lights: What B2B Buyers Should Check Before Ordering",
+    metaDescription:
+      "A B2B purchasing checklist for IP68 pool lights. Learn what contractors, distributors and project buyers should confirm before ordering underwater LED pool lights.",
+    primaryKeyword: "IP68 pool lights",
+    secondaryKeywords: [
+      "IP68 underwater LED pool light",
+      "waterproof pool light",
+      "underwater LED pool light",
+      "IP68 pool light supplier"
+    ],
+    searchIntent: "Commercial investigation for waterproof underwater pool light purchasing",
+    buyerStage: "MOFU / BOFU",
+    targetProducts: [
+      { label: "IP68 Underwater LED Pool Light", href: "/products/ip68-underwater-led-pool-light" },
+      { label: "Stainless Steel Pool Light", href: "/products/stainless-steel-pool-light" },
+      { label: "12V LED Pool Light", href: "/products/12v-led-pool-light" }
+    ],
+    targetApplications: [
+      { label: "Hotel Swimming Pool Lighting", href: "/applications/hotel-pool-lighting" },
+      { label: "Water Park Pool Lighting", href: "/applications/water-park-lighting" },
+      { label: "SPA Resort Pool Lighting", href: "/applications/spa-pool-lighting" }
+    ],
+    ctaProduct: "IP68 Underwater LED Pool Light",
+    introduction: [
+      "IP68 pool lights are used in underwater environments where waterproof reliability directly affects project safety, maintenance and buyer confidence. For B2B buyers, IP68 should be treated as a purchasing checklist, not only a line in a catalog.",
+      "This guide helps pool contractors, distributors, hotel buyers and water park contractors prepare the right questions before ordering underwater LED pool lights."
+    ],
+    sections: [
+      {
+        id: "ip68-meaning",
+        heading: "1. What does IP68 mean for pool light buyers?",
+        paragraphs: [
+          "IP68 generally refers to waterproof protection for underwater use, but buyers still need to confirm how the specific pool light is designed, sealed and installed.",
+          "Different models may use different housings, lenses, cable seals and mounting structures. Confirm the details with the manufacturer before ordering."
+        ]
+      },
+      {
+        id: "waterproof-design",
+        heading: "2. Waterproof design points to confirm",
+        bullets: [
+          "Cable outlet and waterproof sealing method",
+          "Lens and housing structure",
+          "Material option: ABS, PC or stainless steel depending on model",
+          "Installation method: surface mounted, recessed, wall mounted or submersible",
+          "Water depth and actual application environment",
+          "Inspection or testing support available for the selected model"
+        ]
+      },
+      {
+        id: "voltage",
+        heading: "3. Voltage, cable and installation are connected",
+        paragraphs: [
+          "Voltage selection, cable length and installation method should be reviewed together. A 12V or 24V pool light may require different transformer planning, cable route and controller compatibility depending on the project.",
+          "If the buyer is not sure, send pool size, cable distance, voltage requirement and installation drawings to the manufacturer before asking for final pricing."
+        ]
+      },
+      {
+        id: "project-checklist",
+        heading: "4. B2B project checklist before ordering",
+        table: {
+          headers: ["Project item", "Why buyers should confirm it"],
+          rows: [
+            ["Application", "Hotel pool, SPA, water park and villa pools may need different models."],
+            ["Voltage", "12V and 24V options should match project power supply and installation."],
+            ["Quantity", "Quotation and MOQ depend on selected model and order plan."],
+            ["Color option", "White, RGB, RGBW or DMX512 affects controller and wiring."],
+            ["Material", "Confirm ABS, PC or stainless steel according to usage environment."],
+            ["Documentation", "Ask before ordering if certificates or inspection documents are required."]
+          ]
+        }
+      },
+      {
+        id: "certification-qc",
+        heading: "5. Certification and QC should not be assumed",
+        paragraphs: [
+          "Some buyers need CE, RoHS, IP68 test or inspection documents for their market, but availability depends on the model and supplier documentation. Confirm with the manufacturer before ordering.",
+          "For commercial projects, ask what quality checks are performed for the selected model and what documentation can be provided for purchasing review."
+        ]
+      },
+      {
+        id: "rfq",
+        heading: "6. RFQ information for IP68 pool lights",
+        bullets: [
+          "Pool or fountain type and project location",
+          "Voltage requirement and cable length",
+          "Installation method and water depth",
+          "Quantity and estimated order plan",
+          "Color requirement: white, RGB, RGBW or DMX512",
+          "Material preference and application environment",
+          "Destination country and documentation requirements"
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Are all IP68 pool lights suitable for every underwater project?",
+        answer:
+          "No. Buyers should confirm the selected model, installation method, water depth, cable seal, voltage and application environment before ordering."
+      },
+      {
+        question: "What should contractors ask before buying waterproof pool lights?",
+        answer:
+          "Contractors should ask about IP68 design, voltage, cable length, mounting method, material, color control, quantity and project documentation."
+      },
+      {
+        question: "Can IP68 pool lights support RGB or DMX512 control?",
+        answer:
+          "Some models may support RGB, RGBW or DMX512 options, but buyers should confirm model compatibility and controller requirements before bulk order."
+      }
+    ]
   }
 ];
 
