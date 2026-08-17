@@ -68,7 +68,7 @@ export function InquiryForm({ buttonLabel = "Get Quote" }: InquiryFormProps) {
         </label>
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
           WhatsApp
-          <input name="whatsapp" className="focus-ring rounded border border-slate-300 px-4 py-3" placeholder="+1 555 000 0000" />
+          <input required name="whatsapp" className="focus-ring rounded border border-slate-300 px-4 py-3" placeholder="+1 555 000 0000" />
         </label>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
@@ -86,6 +86,26 @@ export function InquiryForm({ buttonLabel = "Get Quote" }: InquiryFormProps) {
           </select>
         </label>
       </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="grid gap-2 text-sm font-semibold text-slate-700">
+          Quantity
+          <input required name="quantity" className="focus-ring rounded border border-slate-300 px-4 py-3" placeholder="For example: 100 pcs or project quantity" />
+        </label>
+        <label className="grid gap-2 text-sm font-semibold text-slate-700">
+          Application
+          <input required name="application" className="focus-ring rounded border border-slate-300 px-4 py-3" placeholder="Hotel pool, villa pool, water park, fountain..." />
+        </label>
+      </div>
+      <label className="grid gap-2 text-sm font-semibold text-slate-700">
+        Specification Requirement
+        <textarea
+          required
+          name="specificationRequirement"
+          rows={4}
+          className="focus-ring rounded border border-slate-300 px-4 py-3"
+          placeholder="Voltage, wattage, RGB/RGBW, DMX512, cable length, installation method or OEM request."
+        />
+      </label>
       <label className="grid gap-2 text-sm font-semibold text-slate-700">
         Message
         <textarea

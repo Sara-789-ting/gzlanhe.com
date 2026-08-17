@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MessageSquare, PackageCheck } from "lucide-react";
+import { ArrowRight, Mail, MessageSquare, PackageCheck } from "lucide-react";
 import { ContactActions } from "@/components/ContactActions";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -22,6 +22,29 @@ const contactHighlights = [
     title: "Sales Email",
     text: siteConfig.email,
     Icon: Mail
+  }
+];
+
+const purchasingInfo = [
+  {
+    title: "MOQ",
+    text: "MOQ depends on product model, order quantity and OEM requirements. Trial orders can be discussed for qualified B2B buyers."
+  },
+  {
+    title: "Lead Time",
+    text: "Lead time should be confirmed by model, quantity, voltage, packaging and customization requirements before ordering."
+  },
+  {
+    title: "OEM Support",
+    text: "Logo, packaging, cable length, voltage and specification customization can be reviewed by product model."
+  },
+  {
+    title: "Sample Policy",
+    text: "Sample availability and sample cost should be confirmed with the selected product model and delivery country."
+  },
+  {
+    title: "Shipping Support",
+    text: "Export packing and shipping support can be arranged according to destination country and order volume."
   }
 ];
 
@@ -58,6 +81,13 @@ export default function ContactPage() {
               <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
                 Get factory price, OEM service and custom lighting solutions.
               </p>
+              <a
+                href="/contact#inquiry"
+                className="focus-ring mt-8 inline-flex items-center gap-2 rounded bg-signal px-6 py-3 font-bold text-ink hover:bg-amber-300"
+              >
+                Get Factory Quote
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
               <a className="mt-8 inline-flex font-bold text-signal" href={`mailto:${siteConfig.email}`}>
                 {siteConfig.email}
               </a>
@@ -85,9 +115,17 @@ export default function ContactPage() {
                 Tell us what pool lighting products you need
               </h2>
               <p className="mt-5 leading-8 text-slate-600">
-                Please include product type, quantity, voltage, color, installation
-                method, WhatsApp and target market. The inquiry will be sent to {siteConfig.email}.
+                Please provide your project details for faster quotation. Include
+                product type, quantity, voltage, application, specification
+                requirement, WhatsApp and target market. The inquiry will be sent to {siteConfig.email}.
               </p>
+              <a
+                href="/contact#inquiry"
+                className="focus-ring mt-6 inline-flex items-center gap-2 rounded bg-ocean px-5 py-3 font-bold text-white hover:bg-cyan-800"
+              >
+                Send Your Project Requirement
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
               <div className="mt-8 grid gap-4 rounded border border-slate-200 bg-white p-6 shadow-sm">
                 <div>
                   <p className="text-sm font-bold uppercase tracking-wide text-ocean">Company</p>
@@ -112,7 +150,36 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="rounded border border-slate-200 bg-white p-6 shadow-lg">
-              <InquiryForm buttonLabel="Get Quote" />
+              <InquiryForm buttonLabel="Get Factory Quote" />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-mist py-20">
+          <div className="section-shell">
+            <div className="mb-8">
+              <p className="text-sm font-bold uppercase tracking-wide text-ocean">Purchasing Information</p>
+              <h2 className="mt-3 text-3xl font-bold text-ink">Information Buyers Usually Confirm Before RFQ</h2>
+              <p className="mt-4 max-w-3xl leading-8 text-slate-600">
+                These details help overseas importers, distributors, pool contractors
+                and project buyers receive a more accurate quotation from Lanhe Pool Lighting.
+              </p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+              {purchasingInfo.map((item) => (
+                <div key={item.title} className="rounded border border-cyan-100 bg-white p-5 shadow-sm">
+                  <h3 className="font-bold text-ink">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 rounded border border-cyan-100 bg-white p-6 shadow-sm">
+              <h2 className="text-2xl font-bold text-ink">Contact LED Pool Light Manufacturer</h2>
+              <p className="mt-3 max-w-3xl leading-8 text-slate-600">
+                Send your project type, quantity, voltage and destination country.
+                Our team can review product selection, OEM options and quotation details.
+              </p>
+              <ContactActions product="LED Pool Light RFQ" />
             </div>
           </div>
         </section>

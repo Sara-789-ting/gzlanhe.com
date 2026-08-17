@@ -12,6 +12,9 @@ type ContactPayload = {
   whatsapp?: string;
   country?: string;
   productInterested?: string;
+  quantity?: string;
+  application?: string;
+  specificationRequirement?: string;
   message?: string;
   website?: string;
 };
@@ -28,6 +31,9 @@ function validate(payload: ContactPayload) {
     whatsapp: clean(payload.whatsapp),
     country: clean(payload.country),
     productInterested: clean(payload.productInterested),
+    quantity: clean(payload.quantity),
+    application: clean(payload.application),
+    specificationRequirement: clean(payload.specificationRequirement),
     message: clean(payload.message),
     website: clean(payload.website)
   };
@@ -39,7 +45,11 @@ function validate(payload: ContactPayload) {
   if (
     data.name.length < 2 ||
     data.company.length < 2 ||
+    data.whatsapp.length < 3 ||
     data.country.length < 2 ||
+    data.quantity.length < 1 ||
+    data.application.length < 2 ||
+    data.specificationRequirement.length < 4 ||
     data.message.length < 8
   ) {
     return { error: "Please complete all required fields." };
@@ -102,6 +112,15 @@ ${inquiry.country}
 
 Product:
 ${inquiry.productInterested}
+
+Quantity:
+${inquiry.quantity}
+
+Application:
+${inquiry.application}
+
+Specification Requirement:
+${inquiry.specificationRequirement}
 
 Message:
 ${inquiry.message}
