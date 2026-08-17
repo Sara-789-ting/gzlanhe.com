@@ -49,6 +49,18 @@ export default async function BlogPostPage({ params }: BlogRouteProps) {
   if (!post) {
     notFound();
   }
+  const relatedGuides = blogPosts
+    .filter((guide) => guide.slug !== post.slug)
+    .filter((guide) => {
+      const productOverlap = guide.targetProducts.some((guideProduct) =>
+        post.targetProducts.some((postProduct) => postProduct.href === guideProduct.href)
+      );
+      const applicationOverlap = guide.targetApplications.some((guideApplication) =>
+        post.targetApplications.some((postApplication) => postApplication.href === guideApplication.href)
+      );
+      return productOverlap || applicationOverlap;
+    })
+    .slice(0, 3);
 
   return (
     <>
@@ -246,6 +258,24 @@ export default async function BlogPostPage({ params }: BlogRouteProps) {
                   </Link>
                 </div>
               </section>
+
+              {relatedGuides.length ? (
+                <section className="border-t border-slate-200 py-10">
+                  <h2 className="text-3xl font-bold text-ink">Related Buyer Guides</h2>
+                  <div className="mt-5 grid gap-4 md:grid-cols-2">
+                    {relatedGuides.map((guide) => (
+                      <Link
+                        key={guide.slug}
+                        href={`/blog/${guide.slug}`}
+                        className="focus-ring rounded border border-slate-200 bg-slate-50 p-5 transition hover:border-ocean hover:bg-white"
+                      >
+                        <h3 className="font-bold text-ink">{guide.title}</h3>
+                        <p className="mt-3 text-sm leading-6 text-slate-600">{guide.metaDescription}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              ) : null}
 
               <section id="faq" className="scroll-mt-24 border-t border-slate-200 py-10">
                 <h2 className="text-3xl font-bold text-ink">FAQ</h2>

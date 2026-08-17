@@ -18,17 +18,7 @@ export function ProductJsonLd({ product }: { product: ProductPage }) {
       url: siteConfig.url,
       email: siteConfig.email
     },
-    category: "LED pool lighting",
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      url: `${siteConfig.url}/products/${product.slug}`,
-      seller: {
-        "@type": "Organization",
-        name: siteConfig.name
-      }
-    }
+    category: "LED pool lighting"
   };
 
   return (

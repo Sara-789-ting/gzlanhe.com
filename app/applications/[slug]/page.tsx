@@ -13,6 +13,7 @@ import {
   getApplicationBySlug,
   getApplicationProducts
 } from "@/lib/applicationPages";
+import { blogPosts } from "@/lib/blogPosts";
 import { siteConfig } from "@/lib/site";
 
 type ApplicationRouteProps = {
@@ -58,6 +59,9 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
     notFound();
   }
   const products = getApplicationProducts(page);
+  const relatedGuides = blogPosts.filter((post) =>
+    post.targetApplications.some((target) => target.href === `/applications/${page.slug}`)
+  );
 
   return (
     <>
@@ -167,6 +171,33 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
             </div>
           </div>
         </section>
+
+        {relatedGuides.length ? (
+          <section className="bg-white py-20">
+            <div className="section-shell">
+              <div className="mb-8">
+                <p className="text-sm font-bold uppercase tracking-wide text-ocean">Buyer Guides</p>
+                <h2 className="mt-3 text-3xl font-bold text-ink">Related Guides for {page.title}</h2>
+                <p className="mt-4 max-w-3xl leading-8 text-slate-600">
+                  Review practical buying guides before confirming voltage,
+                  waterproof requirements, color control, quantity or project RFQ details.
+                </p>
+              </div>
+              <div className="grid gap-5 md:grid-cols-2">
+                {relatedGuides.map((guide) => (
+                  <Link
+                    key={guide.slug}
+                    href={`/blog/${guide.slug}`}
+                    className="focus-ring rounded border border-slate-200 bg-slate-50 p-5 transition hover:border-ocean hover:bg-white"
+                  >
+                    <h3 className="text-lg font-bold text-ink">{guide.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{guide.metaDescription}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
       </main>
       <Footer />
     </>
