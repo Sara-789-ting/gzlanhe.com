@@ -27,6 +27,15 @@ export type ProductPage = {
   oem: string;
   moq: string;
   certification: string;
+  conversion?: {
+    purchasingInfo: ProductSpec[];
+    rfqChecklist: string[];
+    oemCapabilities: string[];
+    factoryTrust: { title: string; text: string }[];
+    imagePlaceholders: { title: string; alt: string }[];
+    midCta: string;
+    bottomCta: string;
+  };
   relatedSlugs: string[];
   faqs: { question: string; answer: string }[];
 };
@@ -383,6 +392,114 @@ function optionsFor(product: (typeof productSeed)[number]) {
   ];
 }
 
+const sharedPurchasingInfo: ProductSpec[] = [
+  { label: "MOQ", value: "Confirm by product model, quantity and customization level" },
+  { label: "Lead Time", value: "Confirm by quantity, product model, packaging and OEM requirement" },
+  { label: "Packaging", value: "Standard export carton or OEM packaging by requirement" },
+  { label: "Payment Terms", value: "Confirm before order according to quotation and order details" },
+  { label: "Shipping Support", value: "Export packing and shipping support by destination country" }
+];
+
+const sharedFactoryTrust = [
+  {
+    title: "Manufacturer Background",
+    text: "Lanhe Pool Lighting supports overseas distributors, contractors, importers and project buyers with LED pool light and underwater lighting supply."
+  },
+  {
+    title: "Quality Control Process",
+    text: "Quality review can cover material, lighting performance, waterproof structure, cable details and packing before shipment."
+  },
+  {
+    title: "Testing Capability",
+    text: "Testing support can be discussed for waterproof reliability, electrical performance and product consistency by selected model."
+  },
+  {
+    title: "Certifications",
+    text: "Certification and document support should be confirmed by product model before bulk order or market submission."
+  }
+];
+
+const conversionModules: Record<string, NonNullable<ProductPage["conversion"]>> = {
+  "swimming-pool-light-manufacturer": {
+    purchasingInfo: sharedPurchasingInfo,
+    rfqChecklist: [
+      "Product Model or product category",
+      "Quantity for trial order, project order or wholesale supply",
+      "Application such as hotel pool, villa pool, water park or distributor stock",
+      "Voltage requirement: 12V, 24V or project-specific low voltage",
+      "Destination Country and expected delivery schedule",
+      "OEM requirement for logo, cable, label or packaging"
+    ],
+    oemCapabilities: [
+      "Logo customization for distributor and private-label supply",
+      "Packaging customization for export cartons, labels and market requirements",
+      "Specification customization including voltage, cable length and color-control options by model",
+      "Private label support for importers and long-term wholesale buyers"
+    ],
+    factoryTrust: sharedFactoryTrust,
+    imagePlaceholders: [
+      { title: "Factory Photo", alt: "Factory production line of LED pool lights" },
+      { title: "Quality Control", alt: "Quality control process for LED swimming pool lights" },
+      { title: "Waterproof Test", alt: "IP68 waterproof test for underwater pool light" },
+      { title: "Export Packaging", alt: "Export packaging for LED pool light wholesale order" }
+    ],
+    midCta: "Send Product Requirements",
+    bottomCta: "Ask for Product Catalog and Factory Quote"
+  },
+  "rgb-swimming-pool-light": {
+    purchasingInfo: sharedPurchasingInfo,
+    rfqChecklist: [
+      "Product Model or RGB/RGBW pool light category",
+      "Quantity for project or distributor stock",
+      "Application such as hotel pool, villa pool, SPA or water park",
+      "Voltage requirement: 12V, 24V or project-specific low voltage",
+      "Destination Country and target market",
+      "Control method: remote control, RGB/RGBW controller or DMX512 if required"
+    ],
+    oemCapabilities: [
+      "Logo customization for RGB pool light distributor programs",
+      "Packaging customization for retail, wholesale or project supply",
+      "Specification customization including RGB/RGBW, voltage, cable and control method by model",
+      "Private label support for color-changing pool light importers"
+    ],
+    factoryTrust: sharedFactoryTrust,
+    imagePlaceholders: [
+      { title: "RGB Product Detail", alt: "RGB swimming pool light product detail" },
+      { title: "RGB/RGBW Effect", alt: "RGBW swimming pool light color changing effect" },
+      { title: "Controller", alt: "RGB pool light controller and remote control" },
+      { title: "Packaging", alt: "Packaging for RGB swimming pool light bulk order" }
+    ],
+    midCta: "Send Color Control Requirement",
+    bottomCta: "Get RGB Pool Light Factory Quote"
+  },
+  "oem-pool-light-manufacturer": {
+    purchasingInfo: sharedPurchasingInfo,
+    rfqChecklist: [
+      "Product Model or OEM pool light category",
+      "Quantity for sample, trial order or bulk order",
+      "Application or sales channel such as distributor line, hotel project or wholesale program",
+      "Voltage requirement and installation requirement",
+      "Destination Country and target market",
+      "Logo, packaging, cable or specification customization requirement"
+    ],
+    oemCapabilities: [
+      "Logo customization for private-label pool light buyers",
+      "Packaging customization including label, carton mark and product information by requirement",
+      "Specification customization including voltage, cable length, color option and control method by model",
+      "Private label support for importers, distributors and repeat wholesale programs"
+    ],
+    factoryTrust: sharedFactoryTrust,
+    imagePlaceholders: [
+      { title: "OEM Product Range", alt: "OEM LED pool light product range for private label buyers" },
+      { title: "Logo Customization", alt: "Logo customization for OEM swimming pool light" },
+      { title: "OEM Packaging", alt: "OEM packaging for private label pool light order" },
+      { title: "Factory QC", alt: "Quality control for OEM LED pool light manufacturing" }
+    ],
+    midCta: "Send OEM Requirement",
+    bottomCta: "Ask for Private Label Support"
+  }
+};
+
 export const productPages: ProductPage[] = productSeed.map((product) => ({
   slug: product.slug,
   name: product.name,
@@ -409,6 +526,7 @@ export const productPages: ProductPage[] = productSeed.map((product) => ({
   moq:
     "MOQ depends on model and customization level. Trial orders and project quantity quotations can be discussed with qualified B2B buyers.",
   certification: defaultCertification,
+  conversion: conversionModules[product.slug],
   relatedSlugs: pageStrategy[product.slug].related,
   faqs: [
     {

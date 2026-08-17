@@ -213,6 +213,48 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
           </div>
         </section>
 
+        {product.conversion ? (
+          <section className="bg-white py-20">
+            <div className="section-shell grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="rounded border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-sm font-bold uppercase tracking-wide text-ocean">Purchasing Information</p>
+                <h2 className="mt-3 text-3xl font-bold text-ink">B2B Order Details to Confirm</h2>
+                <p className="mt-4 leading-8 text-slate-600">
+                  For overseas distributors, contractors and importers, quotation
+                  depends on model, quantity, voltage, application, packaging and
+                  customization requirements.
+                </p>
+                <div className="mt-6 overflow-hidden rounded border border-slate-200">
+                  <table className="w-full border-collapse text-left text-sm">
+                    <tbody>
+                      {product.conversion.purchasingInfo.map((item) => (
+                        <tr key={item.label} className="border-b border-slate-200 last:border-b-0">
+                          <th className="w-2/5 bg-mist px-4 py-4 font-bold text-ink">{item.label}</th>
+                          <td className="px-4 py-4 text-slate-700">{item.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="rounded border border-cyan-100 bg-mist p-6">
+                <p className="text-sm font-bold uppercase tracking-wide text-ocean">RFQ Checklist</p>
+                <h2 className="mt-3 text-3xl font-bold text-ink">Send These Details for Quotation</h2>
+                <div className="mt-6 grid gap-3">
+                  {product.conversion.rfqChecklist.map((item) => (
+                    <div key={item} className="rounded border border-cyan-100 bg-white px-4 py-3 font-semibold text-slate-700">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6">
+                  <ContactActions product={product.name} compact />
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         <section className="bg-white py-20">
           <div className="section-shell grid gap-10 lg:grid-cols-2">
             <div>
@@ -272,6 +314,67 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
           </div>
         </section>
 
+        {product.conversion ? (
+          <section className="bg-mist py-20">
+            <div className="section-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded border border-cyan-100 bg-white p-6 shadow-sm">
+                <p className="text-sm font-bold uppercase tracking-wide text-ocean">OEM Capability</p>
+                <h2 className="mt-3 text-3xl font-bold text-ink">Customization Support for B2B Buyers</h2>
+                <p className="mt-4 leading-8 text-slate-600">
+                  OEM and private-label support should be confirmed by model,
+                  quantity and target market before bulk ordering.
+                </p>
+                <div className="mt-6 grid gap-4">
+                  {product.conversion.oemCapabilities.map((item) => (
+                    <div key={item} className="rounded border border-slate-200 bg-slate-50 p-4 font-semibold text-slate-700">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6">
+                  <a
+                    href="/contact#inquiry"
+                    className="focus-ring inline-flex items-center gap-2 rounded bg-ocean px-5 py-3 font-bold text-white hover:bg-cyan-800"
+                  >
+                    {product.conversion.midCta}
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+              <div className="rounded border border-cyan-100 bg-white p-6 shadow-sm">
+                <p className="text-sm font-bold uppercase tracking-wide text-ocean">Factory Trust</p>
+                <h2 className="mt-3 text-3xl font-bold text-ink">Manufacturer Support Before Quotation</h2>
+                <div className="mt-6 grid gap-4 md:grid-cols-2">
+                  {product.conversion.factoryTrust.map((item) => (
+                    <div key={item.title} className="rounded border border-slate-200 p-5">
+                      <h3 className="font-bold text-ink">{item.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded border border-cyan-100 bg-white p-6 shadow-sm lg:col-span-2">
+                <p className="text-sm font-bold uppercase tracking-wide text-ocean">Image Placeholders</p>
+                <h2 className="mt-3 text-3xl font-bold text-ink">Real Images to Add After Confirmation</h2>
+                <p className="mt-4 max-w-3xl leading-8 text-slate-600">
+                  These placeholders mark the real product, factory and packing
+                  images needed later. No generated or competitor images should be used.
+                </p>
+                <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                  {product.conversion.imagePlaceholders.map((image) => (
+                    <div key={image.title} className="rounded border border-dashed border-slate-300 bg-slate-50 p-5">
+                      <h3 className="font-bold text-ink">{image.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-slate-600">
+                        ALT suggestion: {image.alt}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         <section className="bg-white py-20">
           <div className="section-shell">
             <div className="mb-8">
@@ -312,7 +415,7 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
               href="/contact#inquiry"
               className="focus-ring mt-8 inline-flex items-center gap-2 rounded bg-ocean px-6 py-3 font-bold text-white hover:bg-cyan-800"
             >
-              Get Quote
+              {product.conversion?.bottomCta ?? "Get Quote"}
               <ArrowRight size={18} aria-hidden="true" />
             </a>
           </div>
