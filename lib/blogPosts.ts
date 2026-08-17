@@ -713,6 +713,235 @@ export const blogPosts: BlogPost[] = [
           "Some models may support RGB, RGBW or DMX512 options, but buyers should confirm model compatibility and controller requirements before bulk order."
       }
     ]
+  },
+  {
+    slug: "how-many-pool-lights-hotel-swimming-pool",
+    title: "How Many Pool Lights Are Needed for a Hotel Swimming Pool?",
+    metaTitle: "How Many Pool Lights Are Needed for a Hotel Swimming Pool?",
+    metaDescription:
+      "A B2B guide for hotel project buyers and pool contractors planning LED pool light quantity, installation positions and RFQ details for hotel swimming pools.",
+    primaryKeyword: "how many pool lights for hotel swimming pool",
+    secondaryKeywords: [
+      "hotel swimming pool lighting",
+      "commercial pool lighting design",
+      "LED pool light quantity",
+      "hotel pool lighting supplier"
+    ],
+    searchIntent: "Application-focused commercial investigation for hotel pool lighting projects",
+    buyerStage: "MOFU / BOFU",
+    targetProducts: [
+      { label: "Swimming Pool Light Manufacturer", href: "/products/swimming-pool-light-manufacturer" },
+      { label: "IP68 Underwater LED Pool Light", href: "/products/ip68-underwater-led-pool-light" },
+      { label: "RGB Swimming Pool Light", href: "/products/rgb-swimming-pool-light" }
+    ],
+    targetApplications: [
+      { label: "Hotel Swimming Pool Lighting", href: "/applications/hotel-pool-lighting" },
+      { label: "Villa Swimming Pool Lighting", href: "/applications/villa-pool-lighting" }
+    ],
+    ctaProduct: "Hotel Swimming Pool Lighting",
+    introduction: [
+      "Hotel project buyers often ask how many pool lights are needed for a swimming pool. The honest answer is that the quantity cannot be decided only by pool area. It depends on pool dimensions, shape, depth, installation positions, light specification, beam distribution, ambient lighting and the desired visual effect.",
+      "This guide gives hotel buyers, resort contractors, pool contractors and lighting contractors a practical decision framework before sending project requirements to a manufacturer."
+    ],
+    sections: [
+      {
+        id: "why-no-fixed-number",
+        heading: "1. Why there is no fixed number of lights for every hotel pool",
+        paragraphs: [
+          "A simple area-based answer can be misleading because two pools with the same size may have different shapes, depths, wall structures, ambient lighting and lighting goals.",
+          "A hotel pool may need soft atmosphere lighting, brighter commercial visibility or RGB/RGBW scene lighting. The final quantity should be confirmed with actual project information and manufacturer recommendation."
+        ]
+      },
+      {
+        id: "step-one",
+        heading: "2. Step 1: Confirm pool dimensions and shape",
+        paragraphs: [
+          "Start with pool length, width, depth and shape. A long rectangular pool, an irregular resort pool and a compact rooftop hotel pool may need very different lighting layouts.",
+          "If drawings are available, send them to the manufacturer. If drawings are not available, provide approximate dimensions and photos for initial recommendation."
+        ],
+        bullets: [
+          "Pool length and width",
+          "Water depth and wall height",
+          "Pool shape and corner layout",
+          "Steps, SPA area or shallow zones",
+          "Indoor or outdoor environment"
+        ]
+      },
+      {
+        id: "installation-positions",
+        heading: "3. Step 2: Confirm installation positions",
+        paragraphs: [
+          "The quantity depends heavily on where lights can be installed. Wall installation, floor installation, recessed mounting and surface mounting create different lighting effects and coverage.",
+          "Before quotation, buyers should confirm whether the pool is new construction or replacement, because installation access and cable routing may limit the available options."
+        ]
+      },
+      {
+        id: "specification-effect",
+        heading: "4. Step 3: Match light specification with desired effect",
+        table: {
+          headers: ["Project factor", "What to confirm"],
+          rows: [
+            ["Light output", "Confirm wattage or brightness direction with the manufacturer before final layout."],
+            ["Beam distribution", "Beam angle and installation position affect coverage and visual comfort."],
+            ["Voltage", "12V or 24V depends on power supply, cable distance and project design."],
+            ["Color option", "White, RGB, RGBW or DMX512 changes controller and wiring planning."],
+            ["Ambient lighting", "Hotel landscape, deck lighting and building lighting affect the pool lighting target."]
+          ]
+        }
+      },
+      {
+        id: "control",
+        heading: "5. Step 4: Confirm RGB, RGBW or controller requirements",
+        paragraphs: [
+          "Hotel and resort pools often use RGB, RGBW or DMX512 lighting for visual scenes. If multiple lights need synchronized color effects, controller planning should be discussed before confirming quantity.",
+          "Buyers should ask whether the selected product and controller can support the desired lighting effect before ordering."
+        ]
+      },
+      {
+        id: "rfq",
+        heading: "6. Step 5: Send project information for final recommendation",
+        bullets: [
+          "Hotel or resort project type",
+          "Pool dimensions, depth and shape",
+          "Installation positions and wall/floor structure",
+          "Desired lighting effect: white, RGB, RGBW or DMX512",
+          "Voltage and cable route information",
+          "Estimated quantity or expected lighting zones",
+          "Destination country and project timeline"
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Can pool light quantity be calculated only by pool area?",
+        answer:
+          "No. Quantity depends on dimensions, shape, depth, installation positions, light specification, beam distribution, ambient lighting and project design requirements."
+      },
+      {
+        question: "What should a hotel buyer send before asking for a pool lighting plan?",
+        answer:
+          "Send pool dimensions, depth, drawings or photos, installation positions, desired lighting effect, voltage, quantity expectation and destination country."
+      },
+      {
+        question: "Should hotel pools use RGB or RGBW lighting?",
+        answer:
+          "It depends on the desired visual effect and white light demand. Buyers should confirm RGB/RGBW and controller requirements with the manufacturer before ordering."
+      }
+    ]
+  },
+  {
+    slug: "fountain-led-light-buying-guide-ip68-dmx-installation",
+    title: "Fountain LED Light Buying Guide: IP68, DMX and Installation Checks",
+    metaTitle: "Fountain LED Light Buying Guide: IP68, DMX and Installation Checks",
+    metaDescription:
+      "A B2B buying guide for fountain LED lights covering IP68 waterproofing, DMX512 control, wiring, installation checks and RFQ details for water feature projects.",
+    primaryKeyword: "fountain LED light buying guide",
+    secondaryKeywords: [
+      "fountain LED light",
+      "underwater fountain light",
+      "DMX fountain light",
+      "IP68 fountain light"
+    ],
+    searchIntent: "Commercial investigation for fountain and water feature lighting procurement",
+    buyerStage: "MOFU / BOFU",
+    targetProducts: [
+      { label: "Fountain LED Light", href: "/products/fountain-led-light" },
+      { label: "Underwater Fountain Light", href: "/products/underwater-fountain-light" },
+      { label: "DMX512 Pool Light", href: "/products/dmx512-pool-light" }
+    ],
+    targetApplications: [
+      { label: "Fountain Lighting Project", href: "/applications/fountain-lighting" },
+      { label: "Water Park Pool Lighting", href: "/applications/water-park-lighting" },
+      { label: "Hotel Swimming Pool Lighting", href: "/applications/hotel-pool-lighting" }
+    ],
+    ctaProduct: "Fountain LED Light",
+    introduction: [
+      "Fountain LED lights are used in underwater and water feature environments where waterproofing, control method, installation and synchronization matter. For B2B buyers, the right product depends on the fountain type, project dimensions, voltage, cable route, RGB/RGBW or DMX512 requirement and installation structure.",
+      "This guide helps fountain contractors, landscape contractors, water feature companies, distributors and project buyers prepare a clearer RFQ before ordering."
+    ],
+    sections: [
+      {
+        id: "ip68",
+        heading: "1. Start with IP68 waterproof requirements",
+        paragraphs: [
+          "Fountain lights often operate in submerged or splash-heavy environments. Buyers should confirm IP68 design, cable outlet, sealing structure, installation depth and water movement before selecting a model.",
+          "If waterproof test or inspection documents are needed for the project, ask the manufacturer before ordering."
+        ]
+      },
+      {
+        id: "voltage-control",
+        heading: "2. Confirm voltage and control method",
+        paragraphs: [
+          "Fountain lighting projects may use 12V or 24V low-voltage options depending on the selected model and project design. Buyers should confirm voltage with the manufacturer instead of assuming one option fits every project.",
+          "RGB, RGBW and DMX512 options affect controller planning, wiring and synchronization, especially when many fixtures work together."
+        ]
+      },
+      {
+        id: "installation",
+        heading: "3. Installation checks before quotation",
+        bullets: [
+          "Fountain type and water depth",
+          "Mounting method and fixture position",
+          "Nozzle position and water movement",
+          "Cable length and waterproof connection route",
+          "Maintenance access after installation",
+          "Material requirement such as stainless steel or other model-specific housing"
+        ]
+      },
+      {
+        id: "dmx",
+        heading: "4. DMX512 and synchronization considerations",
+        paragraphs: [
+          "DMX512 may be considered when the project needs programmable effects, multiple lighting zones or synchronized RGB/RGBW scenes. The final design depends on controller compatibility, light quantity, cable route and project requirements.",
+          "Buyers should send control method, number of fixtures and zone layout before asking for a final quotation."
+        ]
+      },
+      {
+        id: "pre-purchase",
+        heading: "5. Pre-purchase checklist for fountain LED lights",
+        table: {
+          headers: ["RFQ item", "Why it matters"],
+          rows: [
+            ["Fountain type", "Dry fountain, music fountain, pool fountain and water feature projects may require different fixtures."],
+            ["Project dimensions", "Width, depth and fixture positions affect quantity and light selection."],
+            ["Voltage", "Confirm 12V, 24V or project-specific requirement before ordering."],
+            ["RGB/RGBW/DMX", "Control requirements affect wiring, controller and synchronization."],
+            ["Cable length", "Cable route and waterproof sealing should be reviewed before production."],
+            ["Destination country", "Packing, documentation and shipping preparation may vary by market."]
+          ]
+        }
+      },
+      {
+        id: "rfq",
+        heading: "6. What to send before requesting a quotation",
+        bullets: [
+          "Fountain type and project drawings",
+          "Project dimensions and installation position",
+          "Voltage requirement",
+          "Estimated quantity",
+          "RGB/RGBW or DMX512 requirement",
+          "Controller requirement and cable length",
+          "Destination country and expected delivery schedule"
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What should buyers confirm before ordering fountain LED lights?",
+        answer:
+          "Buyers should confirm fountain type, IP68 waterproof requirement, voltage, installation method, cable length, RGB/RGBW or DMX512 requirement and quantity."
+      },
+      {
+        question: "Do fountain LED lights always need DMX512 control?",
+        answer:
+          "No. DMX512 depends on project requirements. It is usually considered when synchronized programmable effects or multiple lighting zones are needed."
+      },
+      {
+        question: "Can pool lights be used as fountain lights?",
+        answer:
+          "Not automatically. Buyers should confirm application, mounting structure, water movement, cable sealing and product suitability with the manufacturer before ordering."
+      }
+    ]
   }
 ];
 
