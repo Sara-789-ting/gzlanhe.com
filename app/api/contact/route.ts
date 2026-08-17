@@ -80,12 +80,19 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: result.error }, { status: 400 });
   }
 
-  const emailTo = "sales@gzlanhe.com";
+  const emailTo = process.env.CONTACT_EMAIL || process.env.EMAIL_TO || "sales@gzlanhe.com";
   const resendApiKey = process.env.RESEND_API_KEY;
 
   if (!resendApiKey) {
     return NextResponse.json(
       { error: "Email service is not configured. Please set RESEND_API_KEY." },
+      { status: 503 }
+    );
+  }
+
+  if (!emailPattern.test(emailTo)) {
+    return NextResponse.json(
+      { error: "Email recipient is not configured. Please set CONTACT_EMAIL." },
       { status: 503 }
     );
   }
