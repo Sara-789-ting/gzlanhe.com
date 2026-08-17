@@ -59,6 +59,9 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
     notFound();
   }
   const products = getApplicationProducts(page);
+  const projectProducts = page.conversion
+    ? products.filter((product) => page.conversion?.recommendedProductSlugs.includes(product.slug))
+    : products;
   const relatedGuides = blogPosts.filter((post) =>
     post.targetApplications.some((target) => target.href === `/applications/${page.slug}`)
   );
@@ -86,7 +89,10 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
               <p className="mt-6 max-w-2xl text-lg leading-8 text-cyan-50">
                 {page.introduction}
               </p>
-              <ContactActions product={page.title} />
+              <ContactActions
+                product={page.title}
+                primaryLabel={page.conversion?.topCta ?? "Get Quote"}
+              />
             </div>
             <div className="rounded border border-white/30 bg-white p-6 shadow-2xl">
               <h2 className="text-2xl font-bold text-ink">Recommended Lighting Solutions</h2>
@@ -101,6 +107,43 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
             </div>
           </div>
         </section>
+
+        {page.conversion ? (
+          <section className="bg-white py-20">
+            <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-wide text-ocean">Project Overview</p>
+                <h2 className="mt-3 text-3xl font-bold text-ink">Project Lighting Requirements</h2>
+                <p className="mt-5 leading-8 text-slate-600">{page.conversion.projectOverview}</p>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {page.conversion.suitableScenes.map((scene) => (
+                    <div key={scene} className="rounded border border-cyan-100 bg-mist px-4 py-3 font-semibold text-slate-700">
+                      {scene}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6">
+                  <ContactActions
+                    product={page.title}
+                    compact
+                    primaryLabel={page.conversion.midCta}
+                  />
+                </div>
+              </div>
+              <div className="rounded border border-cyan-100 bg-mist p-6">
+                <p className="text-sm font-bold uppercase tracking-wide text-ocean">Project Requirement Checklist</p>
+                <h2 className="mt-3 text-3xl font-bold text-ink">Send These Details for Project Quotation</h2>
+                <div className="mt-6 grid gap-3">
+                  {page.conversion.requirementChecklist.map((item) => (
+                    <div key={item} className="rounded border border-cyan-100 bg-white px-4 py-3 font-semibold text-slate-700">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="py-20">
           <div className="section-shell grid gap-6 lg:grid-cols-3">
@@ -140,7 +183,7 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
               <p className="text-sm font-bold uppercase tracking-wide text-ocean">Recommended Products</p>
               <h2 className="mt-3 text-3xl font-bold text-ink">Products for {page.title}</h2>
               <div className="mt-6 grid gap-4">
-                {products.map((product) => (
+                {projectProducts.map((product) => (
                   <Link
                     key={product.slug}
                     href={`/products/${product.slug}`}
@@ -151,9 +194,43 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
                   </Link>
                 ))}
               </div>
+              {page.conversion ? (
+                <div className="mt-6">
+                  <ContactActions
+                    product={page.title}
+                    compact
+                    primaryLabel={page.conversion.midCta}
+                  />
+                </div>
+              ) : null}
             </div>
           </div>
         </section>
+
+        {page.conversion ? (
+          <section className="bg-mist py-20">
+            <div className="section-shell">
+              <div className="mb-8">
+                <p className="text-sm font-bold uppercase tracking-wide text-ocean">Real Project Image Placeholders</p>
+                <h2 className="mt-3 text-3xl font-bold text-ink">Project Images to Add After Confirmation</h2>
+                <p className="mt-4 max-w-3xl leading-8 text-slate-600">
+                  These placeholders mark the real project and installation images
+                  needed later. Do not use generated images or competitor project photos.
+                </p>
+              </div>
+              <div className="grid gap-5 md:grid-cols-3">
+                {page.conversion.imagePlaceholders.map((image) => (
+                  <div key={image.title} className="rounded border border-dashed border-slate-300 bg-white p-6 shadow-sm">
+                    <h3 className="font-bold text-ink">{image.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">
+                      ALT suggestion: {image.alt}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="bg-mist py-20">
           <div className="section-shell">
@@ -167,7 +244,11 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
               ))}
             </div>
             <div className="mt-8">
-              <ContactActions product={page.title} compact />
+              <ContactActions
+                product={page.title}
+                compact
+                primaryLabel={page.conversion?.bottomCta ?? "Get Quote"}
+              />
             </div>
           </div>
         </section>

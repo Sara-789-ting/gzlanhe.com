@@ -14,6 +14,16 @@ export type ApplicationPage = {
   controlOptions: string;
   installationConsiderations: string[];
   customization: string;
+  conversion?: {
+    projectOverview: string;
+    suitableScenes: string[];
+    requirementChecklist: string[];
+    recommendedProductSlugs: string[];
+    imagePlaceholders: { title: string; alt: string }[];
+    topCta: string;
+    midCta: string;
+    bottomCta: string;
+  };
   faqs: { question: string; answer: string }[];
 };
 
@@ -46,6 +56,38 @@ export const applicationPages: ApplicationPage[] = [
     ],
     customization:
       "OEM/project customization can include cable length, control mode, product labeling, packaging and specification documentation.",
+    conversion: {
+      projectOverview:
+        "Hotel and resort pool lighting projects usually require reliable IP68 underwater fixtures, comfortable visual effects, low-voltage design and clear product selection before quotation.",
+      suitableScenes: [
+        "Hotel Swimming Pool",
+        "Resort",
+        "Villa",
+        "Water Park",
+        "Commercial Project"
+      ],
+      requirementChecklist: [
+        "Pool Size",
+        "Installation Type",
+        "Voltage Requirement",
+        "Lighting Color",
+        "Control System",
+        "Quantity"
+      ],
+      recommendedProductSlugs: [
+        "rgb-swimming-pool-light",
+        "ip68-underwater-led-pool-light",
+        "dmx512-pool-light"
+      ],
+      imagePlaceholders: [
+        { title: "Hotel Pool Project", alt: "Hotel swimming pool lighting project with LED pool lights" },
+        { title: "Villa Pool Project", alt: "Villa pool lighting scene using IP68 LED pool lights" },
+        { title: "Installation Scene", alt: "LED pool light installation scene for hotel swimming pool" }
+      ],
+      topCta: "Get Project Quote",
+      midCta: "Discuss Your Lighting Solution",
+      bottomCta: "Send Project Requirement"
+    },
     faqs: [
       {
         question: "Can Lanhe support hotel pool lighting projects?",
@@ -163,6 +205,34 @@ export const applicationPages: ApplicationPage[] = [
     ],
     customization:
       "Engineering customization can include beam angle, cable length, control protocol, mounting accessories and packing requirements.",
+    conversion: {
+      projectOverview:
+        "Fountain lighting projects need underwater-rated fixtures, cable sealing, mounting compatibility and control-system matching before contractors can confirm quotation and installation details.",
+      suitableScenes: [
+        "Hotel Swimming Pool",
+        "Resort",
+        "Villa",
+        "Water Park",
+        "Commercial Project"
+      ],
+      requirementChecklist: [
+        "Pool Size",
+        "Installation Type",
+        "Voltage Requirement",
+        "Lighting Color",
+        "Control System",
+        "Quantity"
+      ],
+      recommendedProductSlugs: ["fountain-led-light", "dmx512-pool-light"],
+      imagePlaceholders: [
+        { title: "Fountain Project", alt: "Fountain lighting project with IP68 LED fountain lights" },
+        { title: "Installation Scene", alt: "Underwater fountain light installation scene" },
+        { title: "Control System", alt: "DMX512 fountain lighting control system for project installation" }
+      ],
+      topCta: "Get Project Quote",
+      midCta: "Discuss Your Lighting Solution",
+      bottomCta: "Send Project Requirement"
+    },
     faqs: [
       {
         question: "Can Lanhe support DMX fountain lighting?",

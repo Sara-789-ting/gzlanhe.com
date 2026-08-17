@@ -4,9 +4,18 @@ import { siteConfig } from "@/lib/site";
 type ContactActionsProps = {
   product?: string;
   compact?: boolean;
+  primaryLabel?: string;
+  secondaryLabel?: string;
+  whatsappLabel?: string;
 };
 
-export function ContactActions({ product = "LED Pool Light", compact = false }: ContactActionsProps) {
+export function ContactActions({
+  product = "LED Pool Light",
+  compact = false,
+  primaryLabel = "Get Quote",
+  secondaryLabel = "Contact Manufacturer",
+  whatsappLabel = "Chat on WhatsApp"
+}: ContactActionsProps) {
   const rfqSubject = encodeURIComponent(`RFQ - ${product}`);
   const rfqBody = encodeURIComponent(
     `Hello Lanhe Pool Lighting,\n\nWe are interested in ${product}.\nPlease send product catalog, factory price and MOQ information.\n\nCompany:\nCountry:\nQuantity:\nApplication:\n`
@@ -18,14 +27,14 @@ export function ContactActions({ product = "LED Pool Light", compact = false }: 
     <div className={`flex flex-wrap gap-3 ${compact ? "" : "mt-6"}`}>
       <a className={`${buttonClass} bg-ocean text-white hover:bg-cyan-800`} href="/contact#inquiry">
         <Send size={17} aria-hidden="true" />
-        Get Quote
+        {primaryLabel}
       </a>
       <a
         className={`${buttonClass} border border-slate-300 bg-white text-ink hover:border-ocean hover:text-ocean`}
         href={`mailto:${siteConfig.email}?subject=${rfqSubject}&body=${rfqBody}`}
       >
         <Mail size={17} aria-hidden="true" />
-        Contact Manufacturer
+        {secondaryLabel}
       </a>
       <a
         className={`${buttonClass} border border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100`}
@@ -34,7 +43,7 @@ export function ContactActions({ product = "LED Pool Light", compact = false }: 
         rel="noreferrer"
       >
         <MessageCircle size={17} aria-hidden="true" />
-        Chat on WhatsApp
+        {whatsappLabel}
       </a>
     </div>
   );
