@@ -96,7 +96,12 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
               <p className="mt-6 max-w-2xl text-lg leading-8 text-cyan-50">
                 {product.description}
               </p>
-              <ContactActions product={product.name} />
+              <ContactActions
+                product={product.name}
+                primaryLabel="Get Factory Quote"
+                secondaryLabel="Request Product Catalog"
+                whatsappLabel="Talk to Lighting Expert"
+              />
             </div>
             <div className="overflow-hidden rounded border border-white/30 bg-white shadow-2xl">
               <Image
@@ -248,7 +253,13 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
                   ))}
                 </div>
                 <div className="mt-6">
-                  <ContactActions product={product.name} compact />
+                  <ContactActions
+                    product={product.name}
+                    compact
+                    primaryLabel="Get Factory Quote"
+                    secondaryLabel="Request Product Catalog"
+                    whatsappLabel="Talk to Lighting Expert"
+                  />
                 </div>
               </div>
             </div>
@@ -415,7 +426,7 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
               href="/contact#inquiry"
               className="focus-ring mt-8 inline-flex items-center gap-2 rounded bg-ocean px-6 py-3 font-bold text-white hover:bg-cyan-800"
             >
-              {product.conversion?.bottomCta ?? "Get Quote"}
+              {product.conversion?.bottomCta ?? "Get Factory Quote"}
               <ArrowRight size={18} aria-hidden="true" />
             </a>
           </div>

@@ -77,7 +77,7 @@ export function InquiryForm({ buttonLabel = "Get Quote" }: InquiryFormProps) {
           <input required name="country" className="focus-ring rounded border border-slate-300 px-4 py-3" />
         </label>
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
-          Product Interested
+          Product Interest
           <select required name="productInterested" className="focus-ring rounded border border-slate-300 px-4 py-3">
             <option value="">Select a product</option>
             {products.map((product) => (
@@ -88,11 +88,11 @@ export function InquiryForm({ buttonLabel = "Get Quote" }: InquiryFormProps) {
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
-          Quantity
+          Quantity Requirement
           <input required name="quantity" className="focus-ring rounded border border-slate-300 px-4 py-3" placeholder="For example: 100 pcs or project quantity" />
         </label>
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
-          Application
+          Application / Project Type
           <input required name="application" className="focus-ring rounded border border-slate-300 px-4 py-3" placeholder="Hotel pool, villa pool, water park, fountain..." />
         </label>
       </div>
@@ -107,7 +107,7 @@ export function InquiryForm({ buttonLabel = "Get Quote" }: InquiryFormProps) {
         />
       </label>
       <label className="grid gap-2 text-sm font-semibold text-slate-700">
-        Message
+        Project Details / Message
         <textarea
           required
           name="message"

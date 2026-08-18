@@ -91,7 +91,8 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
               </p>
               <ContactActions
                 product={page.title}
-                primaryLabel={page.conversion?.topCta ?? "Get Quote"}
+                primaryLabel="Submit Project Requirement"
+                secondaryLabel="Contact Manufacturer"
               />
             </div>
             <div className="rounded border border-white/30 bg-white p-6 shadow-2xl">
@@ -126,7 +127,8 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
                   <ContactActions
                     product={page.title}
                     compact
-                    primaryLabel={page.conversion.midCta}
+                    primaryLabel="Submit Project Requirement"
+                    secondaryLabel="Contact Manufacturer"
                   />
                 </div>
               </div>
@@ -199,7 +201,8 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
                   <ContactActions
                     product={page.title}
                     compact
-                    primaryLabel={page.conversion.midCta}
+                    primaryLabel="Submit Project Requirement"
+                    secondaryLabel="Contact Manufacturer"
                   />
                 </div>
               ) : null}
@@ -247,7 +250,8 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
               <ContactActions
                 product={page.title}
                 compact
-                primaryLabel={page.conversion?.bottomCta ?? "Get Quote"}
+                primaryLabel="Submit Project Requirement"
+                secondaryLabel="Contact Manufacturer"
               />
             </div>
           </div>

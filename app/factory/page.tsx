@@ -171,7 +171,11 @@ export default function FactoryPage() {
                 destination country. Lanhe Pool Lighting can review product
                 selection, OEM details and export packing requirements.
               </p>
-              <ContactActions product="LED Pool Light Factory Supply" />
+              <ContactActions
+                product="LED Pool Light Factory Supply"
+                primaryLabel="Get Factory Quote"
+                secondaryLabel="Contact Manufacturer"
+              />
             </div>
           </div>
         </section>

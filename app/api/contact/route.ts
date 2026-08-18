@@ -117,19 +117,19 @@ ${inquiry.whatsapp || "Not provided"}
 Country:
 ${inquiry.country}
 
-Product:
+Product Requirement:
 ${inquiry.productInterested}
 
-Quantity:
+Quantity Requirement:
 ${inquiry.quantity}
 
-Application:
+Application / Project Type:
 ${inquiry.application}
 
 Specification Requirement:
 ${inquiry.specificationRequirement}
 
-Message:
+Project Details / Message:
 ${inquiry.message}
 `;
 
