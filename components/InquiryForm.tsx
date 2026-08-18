@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { productPages } from "@/lib/productPages";
 
 const products = productPages.map((product) => product.name);
@@ -14,6 +14,26 @@ type InquiryFormProps = {
 export function InquiryForm({ buttonLabel = "Get Quote" }: InquiryFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [leadSource, setLeadSource] = useState("Website Form");
+  const [pageUrl, setPageUrl] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const source = params.get("source");
+    const page = params.get("page");
+    const currentPath = window.location.pathname;
+
+    setLeadSource(
+      source ||
+        (currentPath === "/"
+          ? "Homepage"
+          : currentPath.startsWith("/contact")
+            ? "Contact page"
+            : "Website Form")
+    );
+
+    setPageUrl(page ? `${window.location.origin}${page}` : window.location.href.split("#")[0]);
+  }, []);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -51,6 +71,8 @@ export function InquiryForm({ buttonLabel = "Get Quote" }: InquiryFormProps) {
   return (
     <form onSubmit={handleSubmit} className="grid gap-4">
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+      <input type="hidden" name="leadSource" value={leadSource} />
+      <input type="hidden" name="pageUrl" value={pageUrl} />
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
           Name

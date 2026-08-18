@@ -101,6 +101,8 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
                 primaryLabel="Get Factory Quote"
                 secondaryLabel="Request Product Catalog"
                 whatsappLabel="Talk to Lighting Expert"
+                leadSource="Product page"
+                pagePath={`/products/${product.slug}`}
               />
             </div>
             <div className="overflow-hidden rounded border border-white/30 bg-white shadow-2xl">
@@ -259,6 +261,8 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
                     primaryLabel="Get Factory Quote"
                     secondaryLabel="Request Product Catalog"
                     whatsappLabel="Talk to Lighting Expert"
+                    leadSource="Product page"
+                    pagePath={`/products/${product.slug}`}
                   />
                 </div>
               </div>
@@ -408,6 +412,28 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
                 </Link>
               ))}
             </div>
+            <div className="mt-6 grid gap-5 md:grid-cols-2">
+              <Link
+                href="/factory"
+                className="focus-ring rounded border border-slate-200 bg-white p-5 transition hover:border-ocean hover:bg-mist"
+              >
+                <h3 className="text-lg font-bold text-ink">Review Factory Capability</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  Check manufacturer background, production support and quality
+                  control before confirming {product.name} supply.
+                </p>
+              </Link>
+              <Link
+                href={`/contact?source=Product+page&product=${encodeURIComponent(product.name)}&page=${encodeURIComponent(`/products/${product.slug}`)}#inquiry`}
+                className="focus-ring rounded border border-slate-200 bg-white p-5 transition hover:border-ocean hover:bg-mist"
+              >
+                <h3 className="text-lg font-bold text-ink">Send RFQ to Manufacturer</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  Send product model, quantity, voltage, application and destination
+                  country for quotation.
+                </p>
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -423,7 +449,7 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
               ))}
             </div>
             <a
-              href="/contact#inquiry"
+              href={`/contact?source=Product+page&product=${encodeURIComponent(product.name)}&page=${encodeURIComponent(`/products/${product.slug}`)}#inquiry`}
               className="focus-ring mt-8 inline-flex items-center gap-2 rounded bg-ocean px-6 py-3 font-bold text-white hover:bg-cyan-800"
             >
               {product.conversion?.bottomCta ?? "Get Factory Quote"}

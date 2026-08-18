@@ -90,7 +90,7 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="/contact#inquiry"
+                  href="/contact?source=Homepage&product=LED+Swimming+Pool+Light&page=%2F#inquiry"
                   className="focus-ring rounded bg-signal px-6 py-3 font-bold text-ink shadow-lg hover:bg-amber-300"
                 >
                   Get Quote
@@ -102,7 +102,11 @@ export default function Home() {
                   View Products
                 </a>
               </div>
-              <ContactActions product="LED Swimming Pool Light" />
+              <ContactActions
+                product="LED Swimming Pool Light"
+                leadSource="Homepage"
+                pagePath="/"
+              />
               <div className="mt-10 grid max-w-xl grid-cols-3 gap-4 text-sm">
                 <div>
                   <strong className="block text-2xl text-white">IP68</strong>

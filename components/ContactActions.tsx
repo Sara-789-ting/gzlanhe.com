@@ -7,6 +7,8 @@ type ContactActionsProps = {
   primaryLabel?: string;
   secondaryLabel?: string;
   whatsappLabel?: string;
+  leadSource?: string;
+  pagePath?: string;
 };
 
 export function ContactActions({
@@ -14,18 +16,30 @@ export function ContactActions({
   compact = false,
   primaryLabel = "Get Quote",
   secondaryLabel = "Contact Manufacturer",
-  whatsappLabel = "Chat on WhatsApp"
+  whatsappLabel = "Chat on WhatsApp",
+  leadSource = "Website CTA",
+  pagePath
 }: ContactActionsProps) {
   const rfqSubject = encodeURIComponent(`RFQ - ${product}`);
   const rfqBody = encodeURIComponent(
     `Hello Lanhe Pool Lighting,\n\nWe are interested in ${product}.\nPlease send product catalog, factory price and MOQ information.\n\nCompany:\nCountry:\nQuantity:\nApplication:\n`
   );
+  const inquiryParams = new URLSearchParams({
+    source: leadSource,
+    product
+  });
+
+  if (pagePath) {
+    inquiryParams.set("page", pagePath);
+  }
+
+  const inquiryHref = `/contact?${inquiryParams.toString()}#inquiry`;
   const buttonClass =
     "focus-ring inline-flex items-center justify-center gap-2 rounded px-4 py-3 text-sm font-bold";
 
   return (
     <div className={`flex flex-wrap gap-3 ${compact ? "" : "mt-6"}`}>
-      <a className={`${buttonClass} bg-ocean text-white hover:bg-cyan-800`} href="/contact#inquiry">
+      <a className={`${buttonClass} bg-ocean text-white hover:bg-cyan-800`} href={inquiryHref}>
         <Send size={17} aria-hidden="true" />
         {primaryLabel}
       </a>

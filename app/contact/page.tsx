@@ -91,7 +91,11 @@ export default function ContactPage() {
               <a className="mt-8 inline-flex font-bold text-signal" href={`mailto:${siteConfig.email}`}>
                 {siteConfig.email}
               </a>
-              <ContactActions product="LED Pool Light" />
+              <ContactActions
+                product="LED Pool Light"
+                leadSource="Contact page"
+                pagePath="/contact"
+              />
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {contactHighlights.map(({ title, text, Icon }) => (
@@ -179,7 +183,11 @@ export default function ContactPage() {
                 Send your project type, quantity, voltage and destination country.
                 Our team can review product selection, OEM options and quotation details.
               </p>
-              <ContactActions product="LED Pool Light RFQ" />
+              <ContactActions
+                product="LED Pool Light RFQ"
+                leadSource="Contact page"
+                pagePath="/contact"
+              />
             </div>
           </div>
         </section>

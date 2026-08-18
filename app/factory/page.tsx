@@ -175,6 +175,8 @@ export default function FactoryPage() {
                 product="LED Pool Light Factory Supply"
                 primaryLabel="Get Factory Quote"
                 secondaryLabel="Contact Manufacturer"
+                leadSource="Factory page"
+                pagePath="/factory"
               />
             </div>
           </div>

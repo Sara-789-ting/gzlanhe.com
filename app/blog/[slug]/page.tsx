@@ -88,7 +88,11 @@ export default async function BlogPostPage({ params }: BlogRouteProps) {
               <p className="mt-5 max-w-2xl text-lg leading-8 text-cyan-50">
                 Primary keyword: {post.primaryKeyword}
               </p>
-              <ContactActions product={post.ctaProduct} />
+              <ContactActions
+                product={post.ctaProduct}
+                leadSource="Blog"
+                pagePath={`/blog/${post.slug}`}
+              />
             </div>
             <div className="rounded border border-white/30 bg-white p-6 shadow-2xl">
               <h2 className="text-2xl font-bold text-ink">Procurement Focus</h2>
@@ -150,7 +154,12 @@ export default async function BlogPostPage({ params }: BlogRouteProps) {
                   ))}
                 </div>
                 <div className="mt-6">
-                  <ContactActions product={post.ctaProduct} compact />
+                  <ContactActions
+                    product={post.ctaProduct}
+                    compact
+                    leadSource="Blog"
+                    pagePath={`/blog/${post.slug}`}
+                  />
                 </div>
               </div>
 
@@ -248,7 +257,7 @@ export default async function BlogPostPage({ params }: BlogRouteProps) {
                     </p>
                   </Link>
                   <Link
-                    href="/contact#inquiry"
+                    href={`/contact?source=Blog&product=${encodeURIComponent(post.ctaProduct)}&page=${encodeURIComponent(`/blog/${post.slug}`)}#inquiry`}
                     className="focus-ring rounded border border-slate-200 bg-slate-50 p-5 transition hover:border-ocean hover:bg-white"
                   >
                     <h3 className="font-bold text-ink">Send RFQ to Manufacturer</h3>
@@ -296,7 +305,11 @@ export default async function BlogPostPage({ params }: BlogRouteProps) {
                   method and destination country. Lanhe Pool Lighting will help
                   recommend suitable LED pool light options before quotation.
                 </p>
-                <ContactActions product={post.ctaProduct} />
+                <ContactActions
+                  product={post.ctaProduct}
+                  leadSource="Blog"
+                  pagePath={`/blog/${post.slug}`}
+                />
               </section>
             </article>
           </div>

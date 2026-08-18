@@ -392,6 +392,14 @@ function optionsFor(product: (typeof productSeed)[number]) {
   ];
 }
 
+function productSeoTitle(product: (typeof productSeed)[number]) {
+  return `${product.keyword} Manufacturer/Supplier China | Lanhe Pool Lighting`;
+}
+
+function productSeoDescription(product: (typeof productSeed)[number]) {
+  return `${product.description} Factory direct price for IP68 waterproof ${product.name}, RGB / DMX512 options for swimming pool, fountain or SPA projects, and OEM capability.`;
+}
+
 const sharedPurchasingInfo: ProductSpec[] = [
   { label: "MOQ", value: "Confirm by product model, quantity and customization level" },
   { label: "Lead Time", value: "Confirm by quantity, product model, packaging and OEM requirement" },
@@ -509,8 +517,8 @@ export const productPages: ProductPage[] = productSeed.map((product) => ({
   searchIntent: pageStrategy[product.slug].intent,
   buyingFocus: pageStrategy[product.slug].focus,
   title: product.title,
-  metaTitle: product.title,
-  metaDescription: product.description,
+  metaTitle: productSeoTitle(product),
+  metaDescription: productSeoDescription(product),
   description: product.description,
   image: mainImage,
   gallery: galleryFor(product.keyword),

@@ -34,7 +34,7 @@ export function Header() {
           ))}
         </nav>
         <a
-          href="/contact"
+          href="/contact?source=Navigation#inquiry"
           className="focus-ring rounded bg-signal px-4 py-2 text-sm font-bold text-ink shadow-sm hover:bg-amber-300"
         >
           Get Quote

@@ -27,10 +27,14 @@ export async function generateMetadata({ params }: SolutionRouteProps): Promise<
   return {
     title: page.title,
     description: page.metaDescription,
+    alternates: {
+      canonical: `${siteConfig.url}/solutions/${page.slug}`
+    },
     keywords: page.keywords,
     openGraph: {
       title: page.title,
       description: page.metaDescription,
+      url: `${siteConfig.url}/solutions/${page.slug}`,
       images: [{ url: "/images/hero-pool-lights.png", width: 1536, height: 1024 }]
     }
   };
@@ -62,7 +66,7 @@ export default async function SolutionPage({ params }: SolutionRouteProps) {
                 {page.intro}
               </p>
               <a
-                href="/contact"
+                href={`/contact?source=Solution+page&product=${encodeURIComponent(page.h1)}&page=${encodeURIComponent(`/solutions/${page.slug}`)}#inquiry`}
                 className="focus-ring mt-8 inline-flex items-center gap-2 rounded bg-signal px-6 py-3 font-bold text-ink shadow-lg hover:bg-amber-300"
               >
                 Get Quote

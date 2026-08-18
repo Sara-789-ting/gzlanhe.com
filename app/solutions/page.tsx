@@ -4,11 +4,15 @@ import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { solutionPages } from "@/lib/solutionPages";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "LED Pool Light SEO Solutions | GZLANHE",
   description:
     "SEO landing pages for LED pool light manufacturer, IP68 underwater pool light, RGB pool light, OEM pool light and hotel pool lighting solutions.",
+  alternates: {
+    canonical: `${siteConfig.url}/solutions`
+  },
   keywords: [
     "LED pool light manufacturer",
     "IP68 underwater pool light",

@@ -16,6 +16,8 @@ type ContactPayload = {
   application?: string;
   specificationRequirement?: string;
   message?: string;
+  leadSource?: string;
+  pageUrl?: string;
   website?: string;
 };
 
@@ -35,6 +37,8 @@ function validate(payload: ContactPayload) {
     application: clean(payload.application),
     specificationRequirement: clean(payload.specificationRequirement),
     message: clean(payload.message),
+    leadSource: clean(payload.leadSource) || "Website Form",
+    pageUrl: clean(payload.pageUrl),
     website: clean(payload.website)
   };
 
@@ -101,6 +105,12 @@ export async function POST(request: Request) {
   const inquiry = result.data;
 
   const text = `New Website Inquiry
+
+Lead Source:
+${inquiry.leadSource}
+
+Page URL:
+${inquiry.pageUrl || "Not provided"}
 
 Name:
 ${inquiry.name}

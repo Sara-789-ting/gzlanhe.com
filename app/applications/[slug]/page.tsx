@@ -93,6 +93,8 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
                 product={page.title}
                 primaryLabel="Submit Project Requirement"
                 secondaryLabel="Contact Manufacturer"
+                leadSource="Application page"
+                pagePath={`/applications/${page.slug}`}
               />
             </div>
             <div className="rounded border border-white/30 bg-white p-6 shadow-2xl">
@@ -129,6 +131,8 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
                     compact
                     primaryLabel="Submit Project Requirement"
                     secondaryLabel="Contact Manufacturer"
+                    leadSource="Application page"
+                    pagePath={`/applications/${page.slug}`}
                   />
                 </div>
               </div>
@@ -203,9 +207,31 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
                     compact
                     primaryLabel="Submit Project Requirement"
                     secondaryLabel="Contact Manufacturer"
+                    leadSource="Application page"
+                    pagePath={`/applications/${page.slug}`}
                   />
                 </div>
               ) : null}
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                <Link
+                  href="/factory"
+                  className="focus-ring rounded border border-slate-200 bg-slate-50 p-5 transition hover:border-ocean hover:bg-white"
+                >
+                  <h3 className="font-bold text-ink">Review Factory Capability</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                    Check manufacturer and quality-control support before project RFQ.
+                  </p>
+                </Link>
+                <Link
+                  href={`/contact?source=Application+page&product=${encodeURIComponent(page.title)}&page=${encodeURIComponent(`/applications/${page.slug}`)}#inquiry`}
+                  className="focus-ring rounded border border-slate-200 bg-slate-50 p-5 transition hover:border-ocean hover:bg-white"
+                >
+                  <h3 className="font-bold text-ink">Send Project Requirement</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                    Submit pool size, voltage, control method and quantity for recommendation.
+                  </p>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -252,6 +278,8 @@ export default async function ApplicationDetailPage({ params }: ApplicationRoute
                 compact
                 primaryLabel="Submit Project Requirement"
                 secondaryLabel="Contact Manufacturer"
+                leadSource="Application page"
+                pagePath={`/applications/${page.slug}`}
               />
             </div>
           </div>
