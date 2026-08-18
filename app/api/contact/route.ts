@@ -80,7 +80,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: result.error }, { status: 400 });
   }
 
-  const emailTo = process.env.CONTACT_EMAIL || process.env.EMAIL_TO || "sales@gzlanhe.com";
+  const emailTo = process.env.CONTACT_EMAIL;
   const resendApiKey = process.env.RESEND_API_KEY;
 
   if (!resendApiKey) {
@@ -90,7 +90,7 @@ export async function POST(request: Request) {
     );
   }
 
-  if (!emailPattern.test(emailTo)) {
+  if (!emailTo || !emailPattern.test(emailTo)) {
     return NextResponse.json(
       { error: "Email recipient is not configured. Please set CONTACT_EMAIL." },
       { status: 503 }
