@@ -392,12 +392,90 @@ function optionsFor(product: (typeof productSeed)[number]) {
   ];
 }
 
+const productSeoProfiles: Record<string, { title: string; description: string }> = {
+  "swimming-pool-light-manufacturer": {
+    title: "Swimming Pool Light Manufacturer China | OEM Pool Light Factory",
+    description:
+      "China swimming pool light manufacturer for B2B buyers. Supply IP68 LED pool lights, underwater pool lamps, OEM service and factory quotation support."
+  },
+  "ip68-underwater-led-pool-light": {
+    title: "IP68 Underwater LED Pool Light Supplier China",
+    description:
+      "Source IP68 underwater LED pool lights for commercial pools, hotel pools and replacement projects with low-voltage options, cable sealing and OEM support."
+  },
+  "rgb-swimming-pool-light": {
+    title: "RGB Swimming Pool Light Supplier China | IP68 RGB Pool Lights",
+    description:
+      "RGB swimming pool light supplier for hotels, villas, water parks and distributors. IP68 waterproof design, RGB/RGBW options and OEM packing support."
+  },
+  "12v-led-pool-light": {
+    title: "12V LED Pool Light Supplier China | Low Voltage Pool Lights",
+    description:
+      "12V LED pool lights for residential, villa and commercial pool projects. Factory supply with IP68 waterproof structure and OEM options by model."
+  },
+  "24v-swimming-pool-light": {
+    title: "24V Swimming Pool Light Supplier China | Commercial Pool Lighting",
+    description:
+      "24V swimming pool lights for commercial pool, hotel and water park projects. Low-voltage LED pool light supply with project quotation support."
+  },
+  "stainless-steel-pool-light": {
+    title: "Stainless Steel Pool Light Manufacturer China | IP68 Pool Lamp",
+    description:
+      "Stainless steel pool light manufacturer for underwater lighting buyers needing durable housing, IP68 sealing, low-voltage options and OEM support."
+  },
+  "dmx512-pool-light": {
+    title: "DMX512 Pool Light Supplier China | RGB Pool Lighting Projects",
+    description:
+      "DMX512 pool light supplier for commercial RGB pool lighting, hotel pools, water parks and synchronized project lighting with OEM support."
+  },
+  "fountain-led-light": {
+    title: "Fountain LED Light Manufacturer China | IP68 DMX Fountain Lights",
+    description:
+      "Fountain LED light manufacturer for water feature contractors and engineering buyers. IP68 underwater lights with RGB/DMX options and project support."
+  },
+  "waterfall-led-light": {
+    title: "Waterfall LED Light Supplier China | Pool Water Feature Lighting",
+    description:
+      "Waterfall LED lights for pool waterfalls, spillways and water curtain projects. Waterproof LED lighting supply for landscape and pool contractors."
+  },
+  "spa-pool-light": {
+    title: "SPA Pool Light Supplier China | Compact IP68 LED Pool Lights",
+    description:
+      "Compact SPA pool lights for resort, villa and small pool projects. IP68 low-voltage LED pool light supply with RGB and OEM options by model."
+  },
+  "underwater-fountain-light": {
+    title: "Underwater Fountain Light Supplier China | IP68 RGB Fountain Lamp",
+    description:
+      "Underwater fountain lights for submerged water feature projects, landscape fountains and RGB lighting systems with IP68 sealing and OEM support."
+  },
+  "pond-led-underwater-light": {
+    title: "Pond LED Underwater Light Supplier China | Landscape Water Lights",
+    description:
+      "Pond LED underwater lights for garden ponds and landscape water features. IP68 waterproof outdoor lighting supply for project and wholesale buyers."
+  },
+  "oem-pool-light-manufacturer": {
+    title: "OEM Pool Light Manufacturer China | Private Label LED Pool Lights",
+    description:
+      "OEM pool light manufacturer for importers and distributors. Support private label, custom logo, packaging, cable specification and bulk order planning."
+  },
+  "china-led-pool-light-supplier": {
+    title: "China LED Pool Light Supplier | Factory Direct Pool Lighting",
+    description:
+      "China LED pool light supplier for distributors, importers, pool builders and project buyers sourcing IP68 pool lights and OEM lighting solutions."
+  },
+  "custom-pool-lighting-solution": {
+    title: "Custom Pool Lighting Solution China | OEM LED Pool Light Supplier",
+    description:
+      "Custom pool lighting solution for hotel, villa, water park and engineering projects. Review voltage, RGB/DMX control, cable and OEM requirements."
+  }
+};
+
 function productSeoTitle(product: (typeof productSeed)[number]) {
-  return `${product.keyword} Manufacturer/Supplier China | Lanhe Pool Lighting`;
+  return productSeoProfiles[product.slug]?.title ?? `${product.keyword} Supplier China`;
 }
 
 function productSeoDescription(product: (typeof productSeed)[number]) {
-  return `${product.description} Factory direct price for IP68 waterproof ${product.name}, RGB / DMX512 options for swimming pool, fountain or SPA projects, and OEM capability.`;
+  return productSeoProfiles[product.slug]?.description ?? product.description;
 }
 
 const sharedPurchasingInfo: ProductSpec[] = [

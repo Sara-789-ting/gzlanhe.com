@@ -11,9 +11,9 @@ import { advantages, applications, productCategories } from "@/lib/products";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Swimming Pool Light Manufacturer in China",
+  title: "Lanhe Pool Lighting | LED Pool Light Manufacturer & B2B Supplier",
   description:
-    "Lanhe Pool Lighting is a swimming pool light manufacturer in China supplying IP68 underwater LED pool lights, RGB pool lights and OEM lighting solutions for B2B buyers.",
+    "Lanhe Pool Lighting supplies IP68 LED swimming pool lights, underwater lights, RGB/DMX pool lighting and OEM solutions for distributors, contractors and project buyers.",
   alternates: {
     canonical: "https://gzlanhe.com/"
   }
@@ -82,11 +82,11 @@ export default function Home() {
                 Factory Direct - MOQ Support - OEM/ODM
               </p>
               <h1 className="max-w-2xl text-4xl font-bold leading-tight tracking-normal sm:text-5xl lg:text-6xl">
-                Professional Swimming Pool Light Manufacturer in China
+                Lanhe Pool Lighting - LED Pool Light Manufacturer & B2B Supplier
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-cyan-50">
-                Professional manufacturer of IP68 waterproof LED pool lights,
-                underwater lights and custom lighting solutions.
+                China manufacturer of IP68 waterproof LED pool lights,
+                underwater lights, RGB/DMX pool lighting and OEM solutions for overseas buyers.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
