@@ -1,22 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Building2 } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
 import { applicationPages } from "@/lib/applicationPages";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Pool Lighting Applications",
   description:
     "Explore hotel pool lighting, villa pool lighting, water park lighting, fountain lighting and SPA pool lighting solutions from Lanhe Pool Lighting.",
   alternates: {
-    canonical: "https://gzlanhe.com/applications"
+    canonical: `${siteConfig.url}/applications`
   }
 };
 
 export default function ApplicationsPage() {
   return (
     <>
+      <OrganizationJsonLd pageUrl={`${siteConfig.url}/applications`} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Applications", path: "/applications" }
+        ]}
+      />
       <Header />
       <main>
         <section className="bg-ink py-20 text-white">

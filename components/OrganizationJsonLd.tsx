@@ -4,11 +4,13 @@ export function OrganizationJsonLd({ pageUrl }: { pageUrl: string }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteConfig.url}/#organization`,
     name: "GZLANHE",
     alternateName: siteConfig.name,
-    url: pageUrl,
+    url: siteConfig.url,
     email: siteConfig.email,
     description: siteConfig.description,
+    mainEntityOfPage: pageUrl,
     contactPoint: {
       "@type": "ContactPoint",
       email: siteConfig.email,
