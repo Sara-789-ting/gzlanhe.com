@@ -16,7 +16,10 @@ export type ProductPage = {
   metaDescription: string;
   description: string;
   image: string;
-  gallery: { src: string; alt: string; label: string }[];
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  gallery: { src: string; alt: string; label: string; width?: number; height?: number }[];
   specs: ProductSpec[];
   advantages: string[];
   applications: string[];
@@ -42,6 +45,254 @@ export type ProductPage = {
 
 const mainImage = "/images/hero-pool-lights.png";
 const detailImage = "/images/products/led-swimming-pool-light-detail.png";
+
+const verifiedProductImages: Record<
+  string,
+  {
+    hero: { src: string; alt: string; width: number; height: number };
+    gallery: { src: string; alt: string; label: string; width: number; height: number }[];
+  }
+> = {
+  "ip68-underwater-led-pool-light": {
+    hero: {
+      src: "/images/products/ip68/ip68-underwater-led-pool-light-main.jpeg",
+      alt: "IP68 underwater LED pool light with remote control for swimming pools",
+      width: 1000,
+      height: 1000
+    },
+    gallery: [
+      {
+        src: "/images/products/ip68/ip68-underwater-led-pool-light-front.jpeg",
+        alt: "Front view of IP68 underwater LED pool light",
+        label: "Front View",
+        width: 1024,
+        height: 1024
+      },
+      {
+        src: "/images/products/ip68/ip68-underwater-led-pool-light-cable.jpeg",
+        alt: "Cable detail of IP68 underwater pool light",
+        label: "Cable Detail",
+        width: 750,
+        height: 697
+      },
+      {
+        src: "/images/products/ip68/ip68-underwater-led-pool-light-waterproof-seal.jpeg",
+        alt: "Waterproof seal detail for IP68 underwater pool light",
+        label: "Waterproof Seal",
+        width: 1024,
+        height: 1024
+      },
+      {
+        src: "/images/products/ip68/ip68-underwater-led-pool-light-size.jpeg",
+        alt: "Size and specification image for IP68 underwater pool light",
+        label: "Size and Specification",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "/images/products/ip68/ip68-underwater-led-pool-light-underwater-effect.jpeg",
+        alt: "Underwater lighting effect of IP68 LED pool light",
+        label: "Underwater Effect",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "/images/products/ip68/ip68-underwater-led-pool-light-installation.jpeg",
+        alt: "Installation display for IP68 LED pool light",
+        label: "Installation",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "/images/products/ip68/ip68-underwater-led-pool-light-packing.jpeg",
+        alt: "Packaging for IP68 underwater LED pool light",
+        label: "Packaging",
+        width: 1000,
+        height: 1000
+      }
+    ]
+  },
+  "rgb-swimming-pool-light": {
+    hero: {
+      src: "/images/products/rgb/rgb-swimming-pool-light-main.jpeg",
+      alt: "RGB swimming pool light with controller and accessories",
+      width: 800,
+      height: 800
+    },
+    gallery: [
+      {
+        src: "/images/products/rgb/rgb-swimming-pool-light-front.jpeg",
+        alt: "Front view of RGB swimming pool light",
+        label: "Front View",
+        width: 800,
+        height: 800
+      },
+      {
+        src: "/images/products/rgb/rgb-swimming-pool-light-back.jpeg",
+        alt: "Back view of RGB swimming pool light with cable",
+        label: "Back View",
+        width: 1500,
+        height: 1500
+      },
+      {
+        src: "/images/products/rgb/rgb-swimming-pool-light-rgb-effect.jpeg",
+        alt: "RGB lighting effect for swimming pool light",
+        label: "RGB Effect",
+        width: 800,
+        height: 800
+      },
+      {
+        src: "/images/products/rgb/rgb-swimming-pool-light-rgbw-effect.jpeg",
+        alt: "RGBW swimming pool light effect and product parameters",
+        label: "RGBW Effect",
+        width: 790,
+        height: 1176
+      },
+      {
+        src: "/images/products/rgb/rgb-swimming-pool-light-led-detail.jpeg",
+        alt: "LED detail of RGB swimming pool light",
+        label: "LED Detail",
+        width: 750,
+        height: 750
+      },
+      {
+        src: "/images/products/rgb/rgb-swimming-pool-light-pool-effect.jpeg",
+        alt: "RGB swimming pool light installed in a pool project",
+        label: "Pool Effect",
+        width: 750,
+        height: 750
+      },
+      {
+        src: "/images/products/rgb/rgb-swimming-pool-light-size.jpeg",
+        alt: "Size and specification image for RGB swimming pool light",
+        label: "Size and Specification",
+        width: 800,
+        height: 800
+      }
+    ]
+  },
+  "swimming-pool-light-manufacturer": {
+    hero: {
+      src: "/images/factory/led-pool-light-factory.jpeg",
+      alt: "LED pool light factory workshop and packing area",
+      width: 1536,
+      height: 863
+    },
+    gallery: [
+      {
+        src: "/images/factory/led-pool-light-product-range.jpeg",
+        alt: "LED swimming pool light product range",
+        label: "Product Range",
+        width: 750,
+        height: 256
+      },
+      {
+        src: "/images/factory/led-pool-light-production-line-real.jpeg",
+        alt: "LED pool light production line",
+        label: "Production Line",
+        width: 807,
+        height: 602
+      },
+      {
+        src: "/images/factory/led-pool-light-quality-control.jpeg",
+        alt: "Quality control process for LED pool lights",
+        label: "Quality Control",
+        width: 1566,
+        height: 880
+      },
+      {
+        src: "/images/factory/led-pool-light-export-packing.jpeg",
+        alt: "Export packing for LED pool light orders",
+        label: "Export Packing",
+        width: 809,
+        height: 603
+      }
+    ]
+  },
+  "dmx512-pool-light": {
+    hero: {
+      src: "/images/products/dmx512/dmx512-pool-light-main.jpeg",
+      alt: "DMX512 pool light for RGB fountain and pool lighting projects",
+      width: 790,
+      height: 780
+    },
+    gallery: [
+      {
+        src: "/images/products/dmx512/dmx512-pool-light-product-view.png",
+        alt: "DMX512 pool light product view",
+        label: "Product View",
+        width: 800,
+        height: 800
+      },
+      {
+        src: "/images/products/dmx512/dmx512-pool-light-controller.jpeg",
+        alt: "DMX512 pool light controller and transformer connection",
+        label: "Controller",
+        width: 750,
+        height: 750
+      },
+      {
+        src: "/images/products/dmx512/dmx512-pool-light-wiring.jpeg",
+        alt: "Wiring and project effect for DMX512 pool lights",
+        label: "Wiring and Project Effect",
+        width: 750,
+        height: 750
+      },
+      {
+        src: "/images/products/dmx512/dmx512-pool-light-specification.jpeg",
+        alt: "DMX512 pool light product specification",
+        label: "Specification",
+        width: 750,
+        height: 750
+      },
+      {
+        src: "/images/products/dmx512/dmx512-pool-light-size.jpeg",
+        alt: "DMX512 pool light size drawing",
+        label: "Size Drawing",
+        width: 800,
+        height: 800
+      }
+    ]
+  },
+  "fountain-led-light": {
+    hero: {
+      src: "/images/products/fountain/fountain-led-light-main.png",
+      alt: "LED fountain light with white and RGB light options",
+      width: 750,
+      height: 750
+    },
+    gallery: [
+      {
+        src: "/images/products/fountain/fountain-led-light-detail.png",
+        alt: "LED fountain light front and back detail",
+        label: "Product Detail",
+        width: 750,
+        height: 750
+      },
+      {
+        src: "/images/products/fountain/fountain-led-light-wiring.jpeg",
+        alt: "LED fountain light wiring and transformer installation",
+        label: "Wiring",
+        width: 750,
+        height: 750
+      },
+      {
+        src: "/images/products/fountain/fountain-led-light-underwater-effect.png",
+        alt: "LED fountain light installed in fountain project",
+        label: "Fountain Project Effect",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "/images/products/fountain/fountain-led-light-size.jpeg",
+        alt: "LED fountain light size and specification image",
+        label: "Size and Specification",
+        width: 750,
+        height: 750
+      }
+    ]
+  }
+};
 
 const baseSpecs: ProductSpec[] = [
   { label: "Material", value: "Stainless steel / PC / ABS options" },
@@ -355,7 +606,12 @@ function specsWith(overrides: ProductSpec[]) {
   return [...overrides, ...baseSpecs.filter((item) => !labels.has(item.label))];
 }
 
-function galleryFor(keyword: string) {
+function galleryFor(product: (typeof productSeed)[number]) {
+  const verified = verifiedProductImages[product.slug];
+  if (verified) {
+    return verified.gallery;
+  }
+  const keyword = product.keyword;
   const alt = `IP68 waterproof RGB swimming pool LED light manufacturer for ${keyword}`;
   return [
     { src: mainImage, alt, label: "Main Image" },
@@ -598,8 +854,11 @@ export const productPages: ProductPage[] = productSeed.map((product) => ({
   metaTitle: productSeoTitle(product),
   metaDescription: productSeoDescription(product),
   description: product.description,
-  image: mainImage,
-  gallery: galleryFor(product.keyword),
+  image: verifiedProductImages[product.slug]?.hero.src ?? mainImage,
+  imageAlt: verifiedProductImages[product.slug]?.hero.alt,
+  imageWidth: verifiedProductImages[product.slug]?.hero.width,
+  imageHeight: verifiedProductImages[product.slug]?.hero.height,
+  gallery: galleryFor(product),
   specs: specsWith(product.specOverrides),
   advantages: advantagesFor(product.name, product.keyword),
   applications: product.applications,

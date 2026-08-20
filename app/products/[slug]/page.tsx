@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: ProductRouteProps): Promise<M
       title: product.metaTitle,
       description: product.metaDescription,
       url: `${siteConfig.url}/products/${product.slug}`,
-      images: [{ url: product.image, width: 1536, height: 1024 }]
+      images: [{ url: product.image, width: product.imageWidth ?? 1536, height: product.imageHeight ?? 1024 }]
     }
   };
 }
@@ -108,9 +108,9 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
             <div className="overflow-hidden rounded border border-white/30 bg-white shadow-2xl">
               <Image
                 src={product.image}
-                alt={`IP68 waterproof RGB swimming pool LED light manufacturer - ${product.name}`}
-                width={1536}
-                height={1024}
+                alt={product.imageAlt ?? `IP68 waterproof RGB swimming pool LED light manufacturer - ${product.name}`}
+                width={product.imageWidth ?? 1536}
+                height={product.imageHeight ?? 1024}
                 className="aspect-[4/3] w-full object-cover"
                 priority
               />
@@ -134,8 +134,8 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    width={1536}
-                    height={1024}
+                    width={image.width ?? 1536}
+                    height={image.height ?? 1024}
                     className="aspect-[4/3] w-full object-cover"
                   />
                   <p className="px-4 py-3 text-sm font-bold text-ink">{image.label}</p>
