@@ -125,12 +125,12 @@ export default function Home() {
             <div className="relative">
               <div className="overflow-hidden rounded border border-white/30 bg-white shadow-2xl">
                 <Image
-                  src="/images/hero-pool-lights.png"
-                  alt="LED pool lights and underwater lighting products"
-                  width={1536}
-                  height={1024}
+                  src="/images/factory/led-pool-light-workshop-hero.jpg"
+                  alt="LED pool light production workshop with swimming pool lights"
+                  width={1279}
+                  height={1706}
                   priority
-                  className="aspect-[4/3] h-full w-full object-cover"
+                  className="aspect-[4/3] h-full w-full object-cover object-center"
                 />
               </div>
             </div>
