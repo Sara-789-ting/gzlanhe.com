@@ -130,6 +130,13 @@ export default function ContactPage() {
                 Send Your Project Requirement
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
+              <a
+                href="/catalog"
+                className="focus-ring mt-3 inline-flex items-center gap-2 rounded border border-cyan-700 px-5 py-3 font-bold text-ocean hover:bg-cyan-50"
+              >
+                Download Product Catalog
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
               <div className="mt-8 grid gap-4 rounded border border-slate-200 bg-white p-6 shadow-sm">
                 <div>
                   <p className="text-sm font-bold uppercase tracking-wide text-ocean">Company</p>

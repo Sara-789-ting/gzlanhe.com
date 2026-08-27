@@ -18,6 +18,7 @@ export function Footer() {
           <div className="mt-3 grid gap-2 text-sm text-slate-300">
             <Link href="/products" className="hover:text-signal">Products</Link>
             <Link href="/applications" className="hover:text-signal">Applications</Link>
+            <Link href="/catalog" className="hover:text-signal">Download Catalog</Link>
             <Link href="/blog" className="hover:text-signal">Buyer Guides</Link>
             <Link href="/contact#inquiry" className="hover:text-signal">Request a Quote</Link>
           </div>
