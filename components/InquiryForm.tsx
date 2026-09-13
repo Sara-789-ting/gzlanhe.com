@@ -59,7 +59,7 @@ export function InquiryForm({ buttonLabel = "Get Quote" }: InquiryFormProps) {
 
     if (!response.ok) {
       setStatus("error");
-      setMessage(result.error || "Submission failed. Please email sales@gzlanhe.com directly.");
+      setMessage(result.error || "Submission failed. Please email sara@gzlanhe.com directly.");
       return;
     }
 

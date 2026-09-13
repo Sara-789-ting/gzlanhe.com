@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Lanhe Pool Lighting",
   company: "Lanhe Pool Lighting",
   domain: "gzlanhe.com",
-  email: "sales@gzlanhe.com",
+  email: "sara@gzlanhe.com",
   url: "https://gzlanhe.com",
   whatsapp: "+86 15673283377",
   whatsappUrl: "https://wa.me/8615673283377",

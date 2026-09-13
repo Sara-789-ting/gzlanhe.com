@@ -153,7 +153,7 @@ ${inquiry.message}
     });
   } catch {
     return NextResponse.json(
-      { error: "Email sending failed. Please try again or email sales@gzlanhe.com directly." },
+      { error: "Email sending failed. Please try again or email sara@gzlanhe.com directly." },
       { status: 502 }
     );
   }

@@ -85,9 +85,13 @@ export default function AboutPage() {
                 Built for overseas B2B pool lighting buyers
               </h2>
               <p className="mt-5 leading-8 text-slate-600">
-                GZLANHE supplies LED swimming pool lights, underwater lights and
-                custom lighting products for buyers who need factory direct supply,
-                stable production, OEM/ODM support and global export cooperation.
+                Lanhe Pool Lighting is a China manufacturer of LED pool lights,
+                waterfall spillways, fountain lights, and outdoor project lighting
+                solutions. We supply IP68 underwater pool lights, 316 stainless
+                steel pool lights, Pentair replacement pool lights, RGB fountain
+                lights, and stainless steel waterfall features for pool contractors,
+                distributors, landscape companies, hotels, villas, and commercial
+                projects. OEM, ODM, wholesale, and project supply are available.
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
