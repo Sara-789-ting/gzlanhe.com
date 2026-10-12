@@ -84,6 +84,7 @@ export default async function ProductDetailPage({ params }: ProductRouteProps) {
       />
       <Header />
       <main>
+        {slug === "rgb-swimming-pool-light" ? <aside className="sales-band"><div className="section-shell flex flex-wrap justify-between items-center gap-4"><div><strong>Looking for 35W RGB with Tuya control?</strong><p>Review the dedicated configuration and request an itemized quote.</p></div><Link className="sales-primary px-5 py-3 rounded-md" href="/products/35w-rgb-tuya-pool-light">View 35W RGB + Tuya</Link></div></aside> : null}
         <section className="bg-[linear-gradient(120deg,#073847_0%,#075f73_50%,#f7fbfc_50%,#f7fbfc_100%)] py-16">
           <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div className="text-white">

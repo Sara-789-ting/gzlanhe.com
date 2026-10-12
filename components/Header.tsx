@@ -27,16 +27,22 @@ export function Header() {
             </span>
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
+        <nav className="hidden items-center gap-4 text-sm font-medium text-slate-700 xl:flex">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className="hover:text-ocean">
               {item.label}
             </Link>
           ))}
         </nav>
+        <details className="relative ml-auto xl:hidden">
+          <summary className="focus-ring cursor-pointer rounded px-2 py-2 text-sm font-bold">Menu</summary>
+          <nav aria-label="Mobile navigation" className="absolute right-0 top-full z-50 grid w-56 gap-1 rounded border border-slate-200 bg-white p-3 shadow-lg">
+            {navItems.map((item) => <Link key={item.href} href={item.href} className="focus-ring px-3 py-2 text-sm hover:bg-mist">{item.label}</Link>)}
+          </nav>
+        </details>
         <a
           href="/contact?source=Navigation#inquiry"
-          className="focus-ring rounded bg-signal px-4 py-2 text-sm font-bold text-ink shadow-sm hover:bg-amber-300"
+          className="focus-ring hidden shrink-0 rounded bg-signal px-4 py-2 text-sm font-bold text-ink shadow-sm hover:bg-amber-300 sm:block"
         >
           Get Quote
         </a>

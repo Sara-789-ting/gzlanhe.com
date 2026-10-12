@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import "./globals.css";
+import "./sales.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gzlanhe.com"),

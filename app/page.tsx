@@ -9,6 +9,8 @@ import { InquiryForm } from "@/components/InquiryForm";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { advantages, applications, productCategories } from "@/lib/products";
 import { siteConfig } from "@/lib/site";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { featuredPath } from "@/lib/inquiry";
 
 export const metadata: Metadata = {
   title: "Lanhe Pool Lighting | LED Pool Light Manufacturer & B2B Supplier",
@@ -75,67 +77,17 @@ export default function Home() {
       <SeoJsonLd />
       <Header />
       <main>
-        <section className="relative overflow-hidden bg-[linear-gradient(120deg,#073847_0%,#075f73_46%,#f7fbfc_46%,#f7fbfc_100%)]">
-          <div className="section-shell grid min-h-[680px] items-center gap-10 py-14 lg:grid-cols-[0.92fr_1.08fr] lg:py-20">
-            <div className="text-white">
-              <p className="mb-4 inline-flex rounded bg-white/12 px-4 py-2 text-sm font-bold text-cyan-50 ring-1 ring-white/20">
-                Factory Direct - MOQ Support - OEM/ODM
-              </p>
-              <h1 className="max-w-2xl text-4xl font-bold leading-tight tracking-normal sm:text-5xl lg:text-6xl">
-                Lanhe Pool Lighting - LED Pool Light Manufacturer & B2B Supplier
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-cyan-50">
-                China manufacturer of IP68 waterproof LED pool lights,
-                underwater lights, RGB/DMX pool lighting and OEM solutions for overseas buyers.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="/contact?source=Homepage&product=LED+Swimming+Pool+Light&page=%2F#inquiry"
-                  className="focus-ring rounded bg-signal px-6 py-3 font-bold text-ink shadow-lg hover:bg-amber-300"
-                >
-                  Get Quote
-                </a>
-                <a
-                  href="#products"
-                  className="focus-ring rounded border border-white/70 px-6 py-3 font-bold text-white hover:bg-white/10"
-                >
-                  View Products
-                </a>
-              </div>
-              <ContactActions
-                product="LED Swimming Pool Light"
-                leadSource="Homepage"
-                pagePath="/"
-              />
-              <div className="mt-10 grid max-w-xl grid-cols-3 gap-4 text-sm">
-                <div>
-                  <strong className="block text-2xl text-white">IP68</strong>
-                  Waterproof focus
-                </div>
-                <div>
-                  <strong className="block text-2xl text-white">MOQ</strong>
-                  Flexible trial order
-                </div>
-                <div>
-                  <strong className="block text-2xl text-white">OEM</strong>
-                  Distributor support
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="overflow-hidden rounded border border-white/30 bg-white shadow-2xl">
-                <Image
-                  src="/images/hero-pool-lights.png"
-                  alt="IP68 waterproof LED swimming pool lights for B2B buyers"
-                  width={1536}
-                  height={1024}
-                  priority
-                  className="aspect-[4/3] h-full w-full object-cover object-center"
-                />
-              </div>
-            </div>
-          </div>
+        <section className="sales-hero">
+          <Image className="hero-photo" src="/images/hero-pool-lights.png" alt="LANHE pool lighting range beside a swimming pool" width={1536} height={1024} priority/>
+          <div className="sales-wrap"><div className="hero-content">
+            <p className="sales-kicker text-white">LANHE / Direct from the manufacturer</p>
+            <h1>LED Pool Light Manufacturer</h1>
+            <p>RGB lighting, Tuya control options and OEM support for distributors and pool builders. Specify the lamp, controller and power supply together.</p>
+            <div className="sales-actions"><WhatsAppLink product="LED Pool Lights" source="Homepage hero" pagePath="/" className="sales-primary gap-2">Get WhatsApp quote</WhatsAppLink><Link className="sales-secondary" href={featuredPath}>Explore 35W RGB + Tuya</Link></div>
+            <ul className="sales-benefits"><li>Direct factory contact</li><li>Project-specific configuration</li><li>Logo &amp; packaging on request</li></ul>
+          </div></div>
         </section>
+        <section className="sales-band" aria-label="Featured product"><div className="section-shell flex flex-wrap items-center justify-between gap-6"><div><h2>35W RGB with Tuya control</h2><p>A configuration for your pool lighting range. Confirm quantity, destination and accessories before ordering.</p></div><Link className="sales-secondary px-5 py-3 rounded-md" href={featuredPath}>View configuration</Link></div></section>
 
         <section id="products" className="py-20">
           <div className="section-shell">
@@ -147,8 +99,7 @@ export default function Home() {
                 </h2>
               </div>
               <p className="max-w-xl text-slate-600">
-                Build dedicated SEO entry pages for pool lights, underwater lights,
-                fountain lights and custom lighting requirements.
+                Compare pool lights, underwater lights and fountain lighting by installation and control requirements.
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

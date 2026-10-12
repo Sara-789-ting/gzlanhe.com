@@ -1,4 +1,5 @@
-import { Mail, MessageCircle, Send } from "lucide-react";
+import { Mail, Send } from "lucide-react";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { siteConfig } from "@/lib/site";
 
 type ContactActionsProps = {
@@ -50,15 +51,12 @@ export function ContactActions({
         <Mail size={17} aria-hidden="true" />
         {secondaryLabel}
       </a>
-      <a
-        className={`${buttonClass} border border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100`}
-        href={siteConfig.whatsappUrl}
-        target="_blank"
-        rel="noreferrer"
+      <WhatsAppLink
+        className={`${buttonClass} bg-emerald-700 text-white hover:bg-emerald-800`}
+        product={product} pagePath={pagePath} source={leadSource}
       >
-        <MessageCircle size={17} aria-hidden="true" />
         {whatsappLabel}
-      </a>
+      </WhatsAppLink>
     </div>
   );
 }
